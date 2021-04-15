@@ -1,6 +1,6 @@
 <div class="app-footer__container">
     <div class="footer-logo">
-        <a [routerLink]="'/'"><img class="aeramic_logo" src="../../assets/images/aeramic_logo.jpeg" alt="iBuyer for multifamily real estate. Achieve your dream of owning multifamily investments. It's a new way to sell and buy properties."/></a>
+        <a [routerLink]="'/'"><img class="aeramic_logo" src="../../assets/images/aeramic_logo.jpeg" alt="Aeramic Consstructions"/></a>
     </div>
     <div class='social_icons'>
             <a href="#" [eventTracker]='{"category":"social_facebook", "action":"click", "label" : "social"}'><img src="../../assets/images/social/facebook.png" alt="Facebook - Follow Us"></a>
@@ -9,14 +9,11 @@
             <a href="#" [eventTracker]='{"category":"social_youtube", "action":"click", "label" : "social"}'><img src="../../assets/images/social/youtube.png" alt="Youtube - Follow Us"/></a>
     </div>
     <div *ngIf="!isMobile" fxFlex fxLayout fxLayoutAlign="center space-evenly" class="list-group">
-            <a mat-button [routerLink]="'/'" routerLinkActive="active-indicator" [routerLinkActiveOptions]="{exact: true}"> Home </a>
-            <a mat-button [routerLink]="'/estimate'" routerLinkActive="active-indicator" [routerLinkActiveOptions]="{exact: true}"> Estimate </a>
-            <a mat-button [routerLink]="'/sellers'" routerLinkActive="active-indicator" [routerLinkActiveOptions]="{exact: true}"> Sell </a>
-            <a mat-button [routerLink]="'/buyers'" routerLinkActive="active-indicator" [routerLinkActiveOptions]="{exact: true}"> Buy </a>
-            <a mat-button [routerLink]="'/contactus'" routerLinkActive="active-indicator" [routerLinkActiveOptions]="{exact: true}"> About Us </a>
-            <a mat-button [routerLink]="'/bpe'" *ngIf="isUserAuthenticated" routerLinkActive="active-indicator" [routerLinkActiveOptions]="{exact: true}"> My Ballpark Estimates </a>
-            <a mat-button [routerLink]="'/sitemap'" routerLinkActive="active-indicator" [routerLinkActiveOptions]="{exact: true}" [eventTracker]='{"category":"global", "action":"click", "label" : "sitemap"}'>Site Map</a>
-            <a mat-button [routerLink]="'/terms'" routerLinkActive="active-indicator" [routerLinkActiveOptions]="{exact: true}" [eventTracker]='{"category":"global", "action":"click", "label" : "terms"}'>Terms Of Use</a>
+            <a mat-button [routerLink]="'/'" routerLinkActive="active-indicator" [routerLinkActiveOptions]="{exact: true}"> <mat-icon>home</mat-icon> <span class="nav-caption">Home</span> </a>
+            <a mat-button [routerLink]="'/estimate'" routerLinkActive="active-indicator" [routerLinkActiveOptions]="{exact: true}"> <mat-icon>highlight</mat-icon> <span class="nav-caption">Our Projects</span>  </a>
+            <a mat-button [routerLink]="'/sellers'" routerLinkActive="active-indicator" [routerLinkActiveOptions]="{exact: true}"> <mat-icon>attach_money</mat-icon> <span class="nav-caption">Cost Estimator</span> </a>
+            <a mat-button [routerLink]="'/buyers'" routerLinkActive="active-indicator" [routerLinkActiveOptions]="{exact: true}"> <mat-icon>assessment</mat-icon> <span class="nav-caption">How it works</span> </a>
+            <a mat-button [routerLink]="'/contactus'" routerLinkActive="active-indicator" [routerLinkActiveOptions]="{exact: true}"> <mat-icon>supervisor_account</mat-icon> <span class="nav-caption">Contact Us</span> </a>
     </div>
     <div class='contact_info'>
         <div>
