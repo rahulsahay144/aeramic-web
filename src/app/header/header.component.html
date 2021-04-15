@@ -15,7 +15,7 @@
             <a mat-button [routerLink]="'/buyers'" routerLinkActive="active-indicator" [routerLinkActiveOptions]="{exact: true}"> <mat-icon>assessment</mat-icon> <span class="nav-caption">How it works</span> </a>
             <a mat-button [routerLink]="'/contactus'" routerLinkActive="active-indicator" [routerLinkActiveOptions]="{exact: true}"> <mat-icon>supervisor_account</mat-icon> <span class="nav-caption">Contact Us</span> </a>
         </div>
-        <div fxFlex fxLayout fxLayoutAlign="end" fxHide.lt-lg class="app-header-actions" (userAuth)="checkUserAuth($event)">
+        <div fxFlex fxLayout fxLayoutAlign="end" fxHide.lt-lg class="app-header-actions">
             <mat-icon class="auth_icon" matTooltip="Contact" [matTooltipPosition]="'below'">phone</mat-icon>
             <span>&nbsp;&nbsp; +91 XXXXXXXXXX</span>
         </div>

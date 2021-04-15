@@ -11,6 +11,7 @@ import { SidenavListComponent } from './header/sidenav-list/sidenav-list.compone
 import { MaterialModule } from './material.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { NgxSpinnerModule } from "ngx-spinner";
+import { ButtonDirective } from './button.directive';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { NgxSpinnerModule } from "ngx-spinner";
     HomepageComponent,
     FooterComponent,
     HeaderComponent,
-    SidenavListComponent
+    SidenavListComponent,
+    ButtonDirective
   ],
   imports: [
     BrowserModule,
