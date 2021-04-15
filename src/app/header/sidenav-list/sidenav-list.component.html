@@ -1,0 +1,8 @@
+<!-- <mat-toolbar></mat-toolbar> -->
+<mat-nav-list>
+    <a mat-list-item [routerLink]="'/'" (click)="onSidenavClose()"><mat-icon>home</mat-icon> <span class="nav-caption">Home</span> </a>
+    <a mat-list-item [routerLink]="'/sellers'" (click)="onSidenavClose()" routerLinkActive="active-indicator" [routerLinkActiveOptions]="{exact: true}"> <mat-icon>highlight</mat-icon> <span class="nav-caption">Our Projects</span>  </a>
+    <a mat-list-item [routerLink]="'/buyers'" (click)="onSidenavClose()" routerLinkActive="active-indicator" [routerLinkActiveOptions]="{exact: true}"> <mat-icon>attach_money</mat-icon> <span class="nav-caption">Cost Estimator</span> </a>
+    <a mat-list-item [routerLink]="'/contactus'" (click)="onSidenavClose()" routerLinkActive="active-indicator" [routerLinkActiveOptions]="{exact: true}"> <mat-icon>assessment</mat-icon> <span class="nav-caption">How it works</span> </a>
+    <a mat-list-item [routerLink]="'/terms'" (click)="onSidenavClose()" routerLinkActive="active-indicator" [routerLinkActiveOptions]="{exact: true}"><mat-icon>supervisor_account</mat-icon> <span class="nav-caption">Contact Us</span> </a>
+</mat-nav-list>

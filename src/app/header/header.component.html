@@ -1,0 +1,23 @@
+<mat-toolbar>
+    <mat-toolbar-row>
+        <div fxHide.gt-md>
+            <button mat-icon-button (click)="onToggleSidenav()" [eventTracker]='{"category":"sidenav", "action":"click", "label" : "sidenav"}'>
+                <mat-icon>menu</mat-icon>
+            </button>
+        </div>
+        <div class="app-header__title">
+            <a [routerLink]="'/'"><img class="aeramic_logo" src="../../assets/images/aeramic_logo.jpeg" alt="iBuyer for multifamily real estate. Achieve your dream of owning multifamily investments. It's a new way to sell and buy properties."/></a>
+        </div>
+        <div fxFlex fxLayout fxLayoutAlign="start space-evenly" fxHide.lt-lg class="menu_container">
+            <a mat-button [routerLink]="'/'" routerLinkActive="active-indicator" [routerLinkActiveOptions]="{exact: true}"> <mat-icon>home</mat-icon> <span class="nav-caption">Home</span> </a>
+            <a mat-button [routerLink]="'/estimate'" routerLinkActive="active-indicator" [routerLinkActiveOptions]="{exact: true}"> <mat-icon>highlight</mat-icon> <span class="nav-caption">Our Projects</span> </a>
+            <a mat-button [routerLink]="'/sellers'" routerLinkActive="active-indicator" [routerLinkActiveOptions]="{exact: true}"> <mat-icon>attach_money</mat-icon> <span class="nav-caption">Cost Estimator</span> </a>
+            <a mat-button [routerLink]="'/buyers'" routerLinkActive="active-indicator" [routerLinkActiveOptions]="{exact: true}"> <mat-icon>assessment</mat-icon> <span class="nav-caption">How it works</span> </a>
+            <a mat-button [routerLink]="'/contactus'" routerLinkActive="active-indicator" [routerLinkActiveOptions]="{exact: true}"> <mat-icon>supervisor_account</mat-icon> <span class="nav-caption">Contact Us</span> </a>
+        </div>
+        <div fxFlex fxLayout fxLayoutAlign="end" fxHide.lt-lg class="app-header-actions" (userAuth)="checkUserAuth($event)">
+            <mat-icon class="auth_icon" matTooltip="Contact" [matTooltipPosition]="'below'">phone</mat-icon>
+            <span>&nbsp;&nbsp; +91 XXXXXXXXXX</span>
+        </div>
+    </mat-toolbar-row>
+</mat-toolbar>

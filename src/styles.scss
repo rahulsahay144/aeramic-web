@@ -1,0 +1,185 @@
+/* Global Styles */
+@import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+@import "~bootstrap/dist/css/bootstrap.css";
+@import "~font-awesome/css/font-awesome.css";
+
+* {
+    /** font-family: 'Roboto', Arial, sans-serif;
+    color: #616161; **/
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    // font-family: 'Roboto', sans-serif;
+    color: #1a1d1e;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    // max-width: 100%;
+    // overflow-x: hidden;
+  }
+
+  html, body { 
+    margin: 0;
+    height: 100%;
+  }
+
+  html {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  }
+  
+  body {
+    margin: 0;
+    color: #b1b1b1;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 13px;
+    background-color: #fff;
+  }
+  
+  router-outlet + *  {
+    padding: 0 16px;
+  }
+
+  h1, p, h2, h3, h4, span {
+      line-height: normal !important;
+  }
+
+  p {
+    height: 100%;
+  }
+  
+  /* Hyperlink */
+  
+  a {
+    cursor: pointer;
+    color: #FFFFFF;
+    text-decoration: none;
+  }
+  
+  a:hover {
+    opacity: 0.8;
+  }
+  
+  /* Input */
+  
+  input {
+    font-size: 14px;
+    border-radius: 2px;
+    padding: 8px;
+    margin-bottom: 16px;
+    border: 1px solid #BDBDBD;
+  }
+  
+  label {
+    font-size: 12px;
+    font-weight: bold;
+    margin-bottom: 4px;
+    display: block;
+    text-transform: uppercase;
+  }
+  
+  /* Button */
+  .button, button {
+    display: inline-flex;
+    align-items: center;
+    padding: 8px 16px;
+    border-radius: 2px;
+    font-size: 14px;
+    cursor: pointer;
+    background-color: #1976d2;
+    color: white;
+    border: none;
+  }
+  
+  .button:hover, button:hover {
+    opacity: 0.8;
+    font-weight: normal;
+  }
+  
+  .button:disabled, button:disabled {
+    opacity: 0.5;
+    cursor: auto;
+  }
+  
+  /* Fancy Button */
+  
+  .fancy-button {
+    background-color: white;
+    color: #1976d2;
+  }
+  
+  .fancy-button i.material-icons {
+    color: #1976d2;
+    padding-right: 4px;
+  }
+
+  .material-icons {  
+    /* Support for all WebKit browsers. */
+    -webkit-font-smoothing: antialiased;
+
+    /* Support for Safari and Chrome. */
+    text-rendering: optimizeLegibility;
+
+    /* Support for Firefox. */
+    -moz-osx-font-smoothing: grayscale;
+
+    /* Support for IE. */
+    font-feature-settings: 'liga';
+}
+
+
+::selection {
+  background: #0f94d9;
+  color: #fff;
+}
+
+/* Absolute Center Spinner */
+.progress-loader {
+  position: fixed;
+  z-index: 99999;
+  height: 2em;
+  width: 2em;
+  overflow: show;
+  margin: auto;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+/* Transparent Overlay */
+.progress-loader:before {
+  content: '';
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.3);
+}
+
+.zsiq_theme1 .zsiq_cnt .zsiq_ellips {
+  overflow: visible;
+}
+
+.o2-toast {
+  color: #FFF;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.ngx-toastr {
+  background-color: #024d8c !important;
+}
+
+.mat-tooltip.tooltip {
+    font-size: 13px;   // current default is 10px :-/
+    color: yellow;
+}
+
+.slick-dots {
+  bottom: -50px !important;
+}
+  
+  

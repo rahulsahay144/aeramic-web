@@ -1,0 +1,156 @@
+:host {
+    background-color: #FFFFFF;
+    display: block;
+    position:fixed;
+    top:0;
+    left:0;
+    right:0;
+    width: 100%;
+    z-index: 2;
+    height: 65px;
+    box-shadow:  0 0 10px  rgba(0,0,0,0.6);
+    opacity: 1;
+}
+
+::ng-deep .mat-toolbar-row, .mat-toolbar-single-row {
+    min-height: 65px;
+    height: 65px;
+    //z-index: 999999;
+
+    @media(max-width: 599px) {
+        height: 65px;
+        z-index: 999999;
+    }
+}
+
+.shrink-toolbar {
+    height: 12px;
+  }
+
+.app-header-actions {
+    flex-grow: 0 !important;
+
+    .loggedin-content {
+        display: flex;
+        align-items: center;
+    }
+}
+
+mat-toolbar {
+
+    background-color: #FFF;
+    
+    .app-header__title {
+        display: flex;
+        align-items: center;
+        margin: 0 100px 0 50px;
+
+        .logo-divider {
+            border-left: 2px solid #0498d6;
+            height: 40px;
+            margin: 0 10px 0 0;
+        }
+
+        // span {
+        //     font-size: 36px;
+        //     font-weight: bold;  
+        //     text-shadow: 2px 2px 3px #00A1F2;
+        //     color: #024d8c;
+        // }
+
+        // .app-logo {
+        //     width: 180px;
+        //     background: url('../../assets/images/oxygen_logo.png') no-repeat center center/cover
+        // }
+
+        .aeramic_logo {
+            width: 50px;
+
+            @media (max-width: 599px) {
+                width: 30px;
+            }
+        }
+        
+        @media (max-width: 1279px) {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            margin: 0;
+        }
+
+        @media (max-width: 400px) {
+            justify-content: flex-start;
+        }
+    }
+
+    &::ng-deep .mat-toolbar-row, .mat-toolbar-single-row {
+        min-height: 65px;
+        height: 65px;
+
+        // .menu_container {
+        //     flex: 1 1 10% !important;
+        // }
+        
+
+        @media(max-width: 599px) {
+            height: 65px;
+        }
+    }
+
+   
+    a {
+        text-decoration: none;
+        // margin: 0 1em;
+        text-transform: uppercase;
+        font-size: 14px !important;
+
+        background: linear-gradient(
+                to bottom, #024d8c 0%,
+                #024d8c 100%
+            );
+        background-position: 0 100%;
+        background-repeat: repeat-x;
+        background-size: 0 0;
+        transition: background-size .2s;
+
+        // &:hover {
+        //     background-size: 1px 5px;
+
+        //     // &::ng-deep .mat-button-wrapper{
+        //     //     color: #FFF;
+        //     // }
+        // }
+
+        &::ng-deep .mat-button-wrapper{
+            color: #0458a8;
+        }
+    }
+
+    .active-indicator:after {
+        // background: linear-gradient(
+        //     to bottom, #024d8c 0%,
+        //     #024d8c 100%
+        // );
+        // background-position: 0 100%;
+        // background-repeat: repeat-x;
+        // background-size: 1px 50px;
+
+        // &::ng-deep .mat-button-wrapper{
+        //     color: #FFF;
+        // }
+
+        content: '';
+        width: 100%;
+        text-align: center;
+        border-bottom: 4px solid #024d8c;
+        position: absolute;
+        left: 0;
+        top: 90%;
+        z-index: 1;
+    }
+
+    .auth_icon {
+        font-size: 30px;
+    }
+}

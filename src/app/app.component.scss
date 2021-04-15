@@ -1,0 +1,49 @@
+// #app {
+//     padding-top: 50px;
+//     // padding-bottom: 600px;
+// }
+
+mat-sidenav-container, mat-sidenav-content, mat-sidenav {
+    height: 100%;
+  }
+  
+  mat-sidenav {
+    width: 200px;
+    margin-top: 65px;
+  }
+  
+  .mat-drawer-container {
+    position: unset;
+  }
+  
+  .container {
+      display: block;
+      flex-direction: row;
+      margin-right: auto;
+      margin-left: auto;
+      padding: 45px 0 0 0;
+      height: 100%;
+      box-sizing: border-box;
+      max-width: 100%;
+    }
+  
+    .needhelp_icon {
+      position: fixed;
+      background: rgb(0, 171, 227);
+      box-shadow:  0 0 10px  rgba(0,0,0,0.6);
+      top: 50px;
+      height: 55px;
+      width: 45px;
+      font-weight: 600;
+      /* left: 100px; */
+      top: 250px;
+      padding: 5px;
+      text-align: center;
+      cursor: pointer;
+      /* left: 0; */
+      right: 0;
+      z-index: 99999;
+      color: #000;
+      font-size: 14px;
+      /* text-align: right; */
+      }

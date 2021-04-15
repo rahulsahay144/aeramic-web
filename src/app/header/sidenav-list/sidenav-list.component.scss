@@ -1,0 +1,17 @@
+.app-header-actions {
+    text-align: center;
+}
+
+.active-indicator {
+    background: linear-gradient(
+        to bottom, #024d8c 0%,
+        #024d8c 100%
+    );
+    background-position: 0 100%;
+    background-repeat: repeat-x;
+    background-size: 1px 50px;
+
+    &::ng-deep .mat-list-item-content {
+        color: #FFF;
+    }
+}
