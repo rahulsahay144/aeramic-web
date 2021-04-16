@@ -7,9 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HowitworksComponent implements OnInit {
   slides = [
-    {img: "../../../assets/images/work1.jpeg"},
-    {img: "../../../assets/images/work2.jpeg"},
-    {img: "../../../assets/images/work3.jpeg"}
+    {img: "../../../assets/images/work1.jpeg", text: "Raise a Request", pointer: "1"},
+    {img: "../../../assets/images/work2.jpeg", text: "Meet our Expert", pointer: "2"},
+    {img: "../../../assets/images/work3.jpeg", text: "Book with Us", pointer: "3"}
   ];
   
 
@@ -21,11 +21,13 @@ export class HowitworksComponent implements OnInit {
     enabled: true,
     autoplay: true,
     //draggable: false,
-    autoplaySpeed: 1000,
-    arrows: false,
+    autoplaySpeed: 2000,
+    arrows: true,
     lazyLoad: 'progressive',
-    adaptiveHeight: true, 
-    //centerMode: true,
+    adaptiveHeight: false, 
+    centerMode: true,
+    // nextArrow: "<div class='nav-btn next-slide'></div>",
+    // prevArrow: "<div class='nav-btn prev-slide'></div>"
   };  
 
   constructor() { }
