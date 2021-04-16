@@ -14,6 +14,9 @@ import { NgxSpinnerModule } from "ngx-spinner";
 import { ButtonDirective } from './button.directive';
 import { ServicesComponent } from './homepage/services/services.component';
 import { CompanyintroComponent } from './homepage/companyintro/companyintro.component';
+import { FactsComponent } from './homepage/facts/facts.component';
+import { SlickCarouselModule } from 'ngx-slick-carousel';
+import { HowitworksComponent } from './homepage/howitworks/howitworks.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +27,9 @@ import { CompanyintroComponent } from './homepage/companyintro/companyintro.comp
     SidenavListComponent,
     ButtonDirective,
     ServicesComponent,
-    CompanyintroComponent
+    CompanyintroComponent,
+    FactsComponent,
+    HowitworksComponent
   ],
   imports: [
     BrowserModule,
@@ -32,7 +37,8 @@ import { CompanyintroComponent } from './homepage/companyintro/companyintro.comp
     BrowserAnimationsModule,
     MaterialModule,
     FlexLayoutModule,
-    NgxSpinnerModule
+    NgxSpinnerModule,
+    SlickCarouselModule
   ],
   providers: [],
   bootstrap: [AppComponent]

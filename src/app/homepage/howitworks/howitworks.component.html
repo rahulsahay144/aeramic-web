@@ -1,0 +1,17 @@
+<div class="howitworks__container">
+    <h2>How it works</h2>
+    <h4>Our steps are simple and easy to understand: Plan - Build - Track - Settle in.</h4>
+    <div class="howitworks-content">
+    <ngx-slick-carousel class="carousel" 
+        #slickModal="slick-carousel" 
+        [config]="slideConfig" 
+        (init)="slickInit($event)"
+        (breakpoint)="breakpoint($event)"
+        (afterChange)="afterChange($event)"
+        (beforeChange)="beforeChange($event)">
+        <div ngxSlickItem *ngFor="let slide of slides" class="slide">
+        <img src="{{ slide.img }}" alt="" width="100%">
+        </div>
+</ngx-slick-carousel>
+    </div>
+</div>

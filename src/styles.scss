@@ -35,18 +35,25 @@
     font-size: 13px;
     background-color: #fff;
   }
+
+  .slick-prev, .slick-next {
+    height: 45px;
+    width: 40px;
+    background: #575d59 !important;
+    z-index: 100;
+}
   
   router-outlet + *  {
     padding: 0 16px;
   }
 
-  h1, p, h2, h3, h4, span {
-      line-height: normal !important;
-  }
+//   h1, p, h2, h3, h4, span {
+//       line-height: normal !important;
+//   }
 
-  p {
-    height: 100%;
-  }
+//   p {
+//     height: 100%;
+//   }
   
   /* Hyperlink */
   
