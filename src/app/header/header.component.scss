@@ -79,9 +79,9 @@ mat-toolbar {
             margin: 0;
         }
 
-        @media (max-width: 400px) {
-            justify-content: flex-start;
-        }
+        // @media (max-width: 400px) {
+        //     justify-content: flex-start;
+        // }
     }
 
     &::ng-deep .mat-toolbar-row, .mat-toolbar-single-row {
