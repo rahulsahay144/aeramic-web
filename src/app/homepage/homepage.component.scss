@@ -48,7 +48,7 @@
         rgba(0, 0, 0, 0.1)
         ),
         url('../../assets/images/home-background0.jpg') no-repeat center center/cover;
-        filter: saturate(1.1);
+        filter: saturate(1.3);
       }
   
       .banner-message {
@@ -70,7 +70,7 @@
         display: flex;
         flex-direction: column;
         padding: 7% 0 0 0;
-        text-shadow: 0 1px 0 black;
+        text-shadow: 0 2px 0 black;
     
         @media (max-width: 1064px) {
           width: 100%;
@@ -78,7 +78,7 @@
         }
     
         h1 {
-          font-size: 3.3em;
+          font-size: 4em;
           // line-height: 0px;
           color: #ffffff;
           font-weight: 600;
@@ -99,10 +99,10 @@
         }
     
         span {
-          font-size: 24px;
+          font-size: 26px;
           //line-height: 20px;
           color: #ffffff;
-          font-weight: 500;
+          font-weight: 600;
           display: block;
           padding: 0 0 1em 0;
     
@@ -114,19 +114,26 @@
     }
   
     .banner_info {
-      background: #0498d6;
+      background: rgba(255,80,41,.05);
       padding: 15px 0;
       margin: 0;
-      border-bottom: solid 1px #0084ad;
+      //border-bottom: solid 1px #0084ad;
       box-shadow: inset 0 21px 20px -20px #0073a2;
       height: 70px;
   
       .banner_info_scroller {
         display: flex;
         // display: none;
-        justify-content: center;
+        //justify-content: center;
         font-size: 16px;
         height: 35px;
+        padding-left: 100px;
+        margin-top: 30px;
+
+        .lets-build-button {
+          font-size: 24px;
+          padding: 10px 20px;
+        }
   
         div {
           padding: 0 0 14px;
@@ -319,6 +326,15 @@
       color: #fff;
       background-color: #dd4b39;
     }
+
+    .banner-head h1 {
+      font-size: 4em !important;
+    }
+
+    .banner-head span {
+      font-size: 2em !important;
+    }
+
     @media(max-width: 600px) {
       .banner-head h1 {
         font-size: 2em;

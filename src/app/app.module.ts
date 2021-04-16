@@ -12,6 +12,8 @@ import { MaterialModule } from './material.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { NgxSpinnerModule } from "ngx-spinner";
 import { ButtonDirective } from './button.directive';
+import { ServicesComponent } from './homepage/services/services.component';
+import { CompanyintroComponent } from './homepage/companyintro/companyintro.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { ButtonDirective } from './button.directive';
     FooterComponent,
     HeaderComponent,
     SidenavListComponent,
-    ButtonDirective
+    ButtonDirective,
+    ServicesComponent,
+    CompanyintroComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,139 @@
+.app-card__container {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 1em;
+    background: rgba(255,80,41,.05);
+
+    // // align-items: right;
+    // height: 100%;
+    // // max-width: 1170px;
+    // margin:0 1%;
+    
+    // justify-content: center;
+    // width: 250px;
+    // margin-top: -30%;
+
+    .app-card-title {
+       text-align: center;
+    }
+    
+    .app-card-info {
+      display: flex;
+      justify-content: center;
+      flex-direction: row;
+      align-items: center;
+      // margin:0 10%;
+      width: 100%;
+      // margin:0 1%;
+      // width: 250px;
+      // margin-top: -550px;
+      // height: 530px;
+
+      @media (max-width: 900px) {
+        flex-direction: column;
+      }
+
+      i {
+          margin: 5px;
+      }
+    }
+} 
+
+$animation-timing: 0.3s;
+$animation-ease: ease-in-out;
+$animation-ease-bounce: cubic-bezier(0.175,  0.885, 0.320, 1.275);
+[class*='mat-card'] {
+  position: relative;
+  transition: transform $animation-timing $animation-ease;
+  will-change: transform;
+  
+  &:before,
+  &:after {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      // background-color: currentColor;
+      transition: transform $animation-timing $animation-ease;
+      will-change: transform;
+  }
+  
+  &:before {
+      z-index: -1;
+  }
+  
+  &:after {
+      z-index: -2;
+  }
+}
+
+mat-card {
+  border-radius: 10px;
+  padding: 16px 5px 0 0;
+  margin: 2em;
+  //cursor: pointer;
+  box-shadow: 0 0 1em rgba(0,0,0,0.2) !important;
+  width: 305px;
+
+  &:hover {
+    transform: translate(5px, -5px);
+    
+    &:before { transform: translate(-5px, 5px); }
+    &:after { transform: translate(-10px, 10px); }
+  }
+
+  mat-card-content {
+    text-align: center;
+    height: 195px;
+    margin-top: 20px;
+
+    i {
+      padding: 10px;
+    }
+  }
+  
+  mat-card-header {
+    height: 55px;
+    width: 300px;
+    box-shadow: 0 0 15px rgba(16,14,23,.25);
+    margin-left: -2em;
+    background: white;
+    border-radius: 6px;
+    display: flex;
+    //justify-content: center;
+    cursor: pointer;
+    
+
+    ::ng-deep .mat-card-header-text {
+      //margin: 10px 16px;
+      margin: 0;
+      align-self: center;
+      display: flex;
+      padding-left: 20px;
+    }
+
+    ::ng-deep .mat-card-title {
+      margin: 0;
+    } 
+  
+    ::ng-deep mat-card-title {
+      //text-align: left;
+      font-size: 1.2em;
+      //text-transform: uppercase;
+      //font-weight: 600;
+    }
+  }
+}
+
+
+
+.app-card-content-text h6 {
+  font-size: 1.2em;
+  margin-top: 15px;
+}
+
+//  -webkit-box-shadow: 1rem 0 3rem grey;
+//   box-shadow: 0 0 1rem #555;

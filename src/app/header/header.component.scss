@@ -64,10 +64,10 @@ mat-toolbar {
         // }
 
         .aeramic_logo {
-            width: 50px;
+            width: 70px;
 
             @media (max-width: 599px) {
-                width: 40px;
+                width: 50px;
             }
         }
         
@@ -152,5 +152,10 @@ mat-toolbar {
 
     .auth_icon {
         font-size: 30px;
+        color:#0458a8;
+    }
+
+    .contact_phone {
+        color:#0458a8;
     }
 }
