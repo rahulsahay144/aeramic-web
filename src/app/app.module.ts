@@ -17,6 +17,9 @@ import { CompanyintroComponent } from './homepage/companyintro/companyintro.comp
 import { FactsComponent } from './homepage/facts/facts.component';
 import { SlickCarouselModule } from 'ngx-slick-carousel';
 import { HowitworksComponent } from './homepage/howitworks/howitworks.component';
+import { HttpClientModule} from '@angular/common/http';
+import { NgxGalleryModule } from '@kolkov/ngx-gallery';
+import { ProjectsComponent } from './projects/projects.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +32,8 @@ import { HowitworksComponent } from './homepage/howitworks/howitworks.component'
     ServicesComponent,
     CompanyintroComponent,
     FactsComponent,
-    HowitworksComponent
+    HowitworksComponent,
+    ProjectsComponent
   ],
   imports: [
     BrowserModule,
@@ -38,7 +42,9 @@ import { HowitworksComponent } from './homepage/howitworks/howitworks.component'
     MaterialModule,
     FlexLayoutModule,
     NgxSpinnerModule,
-    SlickCarouselModule
+    SlickCarouselModule,
+    HttpClientModule,
+    NgxGalleryModule
   ],
   providers: [],
   bootstrap: [AppComponent]
