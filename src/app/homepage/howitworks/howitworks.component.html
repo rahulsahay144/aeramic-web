@@ -2,24 +2,26 @@
     <h2>How it works</h2>
     <h4>Our steps are simple and facile to understand: Plan - Build - Track - Settle in.</h4>
     <div class="howitworks-content">
-    <ngx-slick-carousel class="carousel" 
-        #slickModal="slick-carousel" 
-        [config]="slideConfig" 
-        (init)="slickInit($event)"
-        (breakpoint)="breakpoint($event)"
-        (afterChange)="afterChange($event)"
-        (beforeChange)="beforeChange($event)">
-        <div ngxSlickItem *ngFor="let slide of slides" class="slide howitworks-content">
-        
-            
-        <div class="col1 col">
-            <img class="howitworks-image" src="{{ slide.img }}" alt="" width="100%">
-            <div class="howitworks__label">
-                <div class="numberCircle">{{ slide.pointer }}</div>
-                <h5>{{ slide.text }}</h5>
+        <ngx-slick-carousel class="carousel" 
+            #slickModal="slick-carousel" 
+            [config]="slideConfig" 
+            (init)="slickInit($event)"
+            (breakpoint)="breakpoint($event)"
+            (afterChange)="afterChange($event)"
+            (beforeChange)="beforeChange($event)">
+            <div ngxSlickItem *ngFor="let slide of slides" class="slide howitworks-content">
+                <div class="col1 col">
+                    <img class="howitworks-image" src="{{ slide.img }}" alt="" width="100%">
+                    <div class="howitworks__label">
+                        <div class="numberCircle">{{ slide.pointer }}</div>
+                        <h5>{{ slide.text }}</h5>
+                    </div>
+                </div>
             </div>
-        </div>
-        </div>
-</ngx-slick-carousel>
+        </ngx-slick-carousel>
+    </div>
+    <div class="howitworks__sub-content">
+        <div class="numberCircle_2">{{stepNum}}</div>
+        <h5>{{stepDescription}}</h5>
     </div>
 </div>

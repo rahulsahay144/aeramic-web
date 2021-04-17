@@ -11,6 +11,9 @@ export class HowitworksComponent implements OnInit {
     {img: "../../../assets/images/work2.jpeg", text: "Meet our Expert", pointer: "2"},
     {img: "../../../assets/images/work3.jpeg", text: "Book with Us", pointer: "3"}
   ];
+
+  stepDescription: String = '';
+  stepNum: Number = 1;
   
 
   slideConfig = {  
@@ -42,6 +45,19 @@ export class HowitworksComponent implements OnInit {
     
   afterChange(e) {
     console.log('afterChange');
+
+    this.stepNum = e.currentSlide + 1;
+
+    if(this.stepNum == 1) {
+      this.stepDescription = 'Raise a service request or call us at XXXXXXXXXX. Our technical expert will get in touch with you.';
+    }
+    else if(this.stepNum == 2) {
+      this.stepDescription = 'Our experts visit you to take all the requirements and submit exhaustive specifications.';
+    }
+    else if(this.stepNum == 3) {
+      this.stepDescription = 'Good to go. You pay 5% of the estimated project cost as Booking Amount.';
+    }
+
   }
     
   beforeChange(e) {
