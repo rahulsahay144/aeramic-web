@@ -17,7 +17,7 @@ export class ProjectsComponent implements OnInit {
     this.galleryOptions = [
       {
         width: '600px',
-        height: '400px',
+        height: '450px',
         thumbnailsColumns: 6,
         imageAnimation: NgxGalleryAnimation.Slide,
         imageDescription: true,
@@ -32,17 +32,23 @@ export class ProjectsComponent implements OnInit {
       // max-width 800
       {
         breakpoint: 800,
-        width: '100%',
-        height: '600px',
+        width: '400px',
+        height: '400px',
         imagePercent: 80,
         thumbnailsPercent: 20,
         thumbnailsMargin: 20,
-        thumbnailMargin: 20
+        thumbnailMargin: 20,
+        arrowPrevIcon: 'fa fa-arrow-circle-left fa-1x',
+        arrowNextIcon: 'fa fa-arrow-circle-right fa-1x'
       },
       // max-width 400
       {
         breakpoint: 400,
-        preview: false
+        //preview: false,
+        width: '250px',
+        height: '250px',
+        arrowPrevIcon: 'fa fa-arrow-circle-left',
+        arrowNextIcon: 'fa fa-arrow-circle-right'
       }
     ];
 

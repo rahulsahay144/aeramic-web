@@ -21,7 +21,15 @@
         </ngx-slick-carousel>
     </div>
     <div class="howitworks__sub-content">
-        <div class="numberCircle_2">{{stepNum}}</div>
-        <h5>{{stepDescription}}</h5>
+        <div class="numberCircle_2">
+            <span class="fa-stack fa-3x">
+              <i class="fa fa-circle-o fa-stack-2x orange-font"></i>
+              <strong class="fa-stack-1x">{{stepNum}}</strong>
+            </span>
+        </div>
+        <div class="howitworks__sub-content-text">
+            <h5 class="sub-content-text__title"><strong>{{stepTitle}}</strong></h5>
+            <h5 class="sub-content-text__desc">{{stepDescription}}</h5>
+        </div>
     </div>
 </div>

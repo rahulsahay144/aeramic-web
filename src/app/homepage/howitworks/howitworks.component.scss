@@ -24,26 +24,55 @@
       font-weight: bold;
     }
 
+    .orange-font {
+        color: orange;
+    }
+
     .numberCircle_2 {
-        width: 35px;
-        //line-height: 120px;
-        border-radius: 50%;
-        text-align: center;
-        font-size: 22px;
-        border: 2px solid #666;
-        //color: #FFF;
-        margin-right: 20px;
+        font-size: 8px;
+        margin-right: 10px;
     }
 
     .howitworks__sub-content {
         margin-top: 70px;
-        border: 1px solid black;
-        height: 90px;
-        width: 60%;
+        box-shadow: 0 0 15px rgba(33,33,33,.2); 
+        border-top: 5px solid orange;
+        height: 100px;
+        width: 45%;
         background-color: #FFF;
         display: flex;
         align-items: center;
         padding: 20px 50px;
+
+        @media (max-width: 900px) {
+            flex-direction: column;
+            height: auto;
+        }
+
+        .howitworks__sub-content-text {
+            display: flex;
+            flex-direction: column;
+
+            @media (max-width: 900px) {
+                align-items: center;
+            }
+
+            .sub-content-text__title {
+                line-height: 1;
+
+                @media (max-width: 900px) {
+                    text-align: center;
+                }
+            }
+
+            .sub-content-text__desc {
+                font-size: 1.1rem;
+
+                @media (max-width: 900px) {
+                    text-align: center;
+                }
+            }
+        }
     }
   
     .howitworks-content {
