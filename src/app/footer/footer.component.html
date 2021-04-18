@@ -11,7 +11,7 @@
     <div *ngIf="!isMobile" fxFlex fxLayout fxLayoutAlign="center space-evenly" class="list-group">
             <a mat-button [routerLink]="'/'" routerLinkActive="active-indicator" [routerLinkActiveOptions]="{exact: true}"> <mat-icon>home</mat-icon> <span class="nav-caption">Home</span> </a>
             <a mat-button [routerLink]="'/projects'" routerLinkActive="active-indicator" [routerLinkActiveOptions]="{exact: true}"> <mat-icon>highlight</mat-icon> <span class="nav-caption">Our Projects</span>  </a>
-            <a mat-button [routerLink]="'/sellers'" routerLinkActive="active-indicator" [routerLinkActiveOptions]="{exact: true}"> <mat-icon>attach_money</mat-icon> <span class="nav-caption">Cost Estimator</span> </a>
+            <a mat-button [routerLink]="'/estimator'" routerLinkActive="active-indicator" [routerLinkActiveOptions]="{exact: true}"> <mat-icon>attach_money</mat-icon> <span class="nav-caption">Cost Estimator</span> </a>
             <a mat-button [routerLink]="'/buyers'" routerLinkActive="active-indicator" [routerLinkActiveOptions]="{exact: true}"> <mat-icon>assessment</mat-icon> <span class="nav-caption">How it works</span> </a>
             <a mat-button [routerLink]="'/contactus'" routerLinkActive="active-indicator" [routerLinkActiveOptions]="{exact: true}"> <mat-icon>supervisor_account</mat-icon> <span class="nav-caption">Contact Us</span> </a>
     </div>
@@ -30,7 +30,7 @@
         </div>
     </div>
     <div class='copyright'>
-        <span>COPYRIGHT &#9400; {{date| date:'yyyy'}} Aeramic Constructions Pvt. Ltd. &nbsp; | &nbsp; ALL RIGHTS RESERVED</span>
+        <span>COPYRIGHT &#9400; {{date| date:'yyyy'}} Aeramic Constructions & Consultancy Pvt. Ltd. &nbsp; | &nbsp; ALL RIGHTS RESERVED</span>
     </div>
    
     <div class="strip-image"></div>

@@ -20,6 +20,8 @@ import { HowitworksComponent } from './homepage/howitworks/howitworks.component'
 import { HttpClientModule} from '@angular/common/http';
 import { NgxGalleryModule } from '@kolkov/ngx-gallery';
 import { ProjectsComponent } from './projects/projects.component';
+import { EstimatorComponent } from './estimator/estimator.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -33,7 +35,8 @@ import { ProjectsComponent } from './projects/projects.component';
     CompanyintroComponent,
     FactsComponent,
     HowitworksComponent,
-    ProjectsComponent
+    ProjectsComponent,
+    EstimatorComponent
   ],
   imports: [
     BrowserModule,
@@ -44,7 +47,9 @@ import { ProjectsComponent } from './projects/projects.component';
     NgxSpinnerModule,
     SlickCarouselModule,
     HttpClientModule,
-    NgxGalleryModule
+    NgxGalleryModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
