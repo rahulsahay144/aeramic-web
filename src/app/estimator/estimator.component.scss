@@ -17,6 +17,10 @@
 
         .form_content {
             width: 50%;
+
+            @media (max-width: 598px) {
+              width: 100%;
+            }
         }
     }
 
@@ -42,6 +46,10 @@
         display: flex;
         justify-content: flex-end;
         margin: 20px 20px;
+
+        @media (max-width: 598px) {
+          justify-content: center;
+        }
 
         span, b, div i {
             color: #FFF;
@@ -184,6 +192,7 @@
 
                     menu, ol, ul {
                       list-style: none;
+                      padding: 0;
                     }
 
                     .list .list-item {
@@ -203,12 +212,12 @@
                     }
 
                     .list .list-item__col p {
-                      font-size: .7rem;
+                      font-size: .9rem;
                     }
 
                     .list .list-item__col strong {
                       margin-bottom: .2rem;
-                      font-size: .7rem;
+                      font-size: 1rem;
                     }
                   }
                 }
@@ -221,6 +230,10 @@
                     padding: 10px 0 0 0;
                     margin: 0 0 20px 0;
                     text-align: center;
+
+                    // @media (max-width: 598px) {
+                    //   font-size: 15px;
+                    // }
                 }
       
                 span {
