@@ -22,6 +22,7 @@ import { NgxGalleryModule } from '@kolkov/ngx-gallery';
 import { ProjectsComponent } from './projects/projects.component';
 import { EstimatorComponent } from './estimator/estimator.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { PackagesComponent } from './homepage/packages/packages.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     FactsComponent,
     HowitworksComponent,
     ProjectsComponent,
-    EstimatorComponent
+    EstimatorComponent,
+    PackagesComponent
   ],
   imports: [
     BrowserModule,
@@ -49,7 +51,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     HttpClientModule,
     NgxGalleryModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

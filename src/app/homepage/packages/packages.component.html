@@ -1,0 +1,211 @@
+<div class="package__container">
+    <h2>Packages</h2>
+    <h4>Find the best home construction packages.*</h4>
+    <div class="package-content">
+    
+    <section>
+            <div class="container">
+                
+                <!--BLOCK ROW START-->
+                <div class="row">
+                    <div class="col-md-4">
+                    
+                      <!--PRICE CONTENT START-->
+                        <div class="generic_content clearfix">
+                            
+                            <!--HEAD PRICE DETAIL START-->
+                            <div class="generic_head_price clearfix">
+                            
+                                <!--HEAD CONTENT START-->
+                                <div class="generic_head_content clearfix">
+                                
+                                  <!--HEAD START-->
+                                    <div class="head_bg"></div>
+                                    <div class="head">
+                                        <span>Budget Package</span>
+                                    </div>
+                                    <!--//HEAD END-->
+                                    
+                                </div>
+                                <!--//HEAD CONTENT END-->
+                                
+                                <!--PRICE START-->
+                                <div class="generic_price_tag clearfix">	
+                                    <span class="price">
+                                        <span class="sign">₹</span>
+                                        <span class="currency">1,585</span>
+                                        <span class="month">/sq.ft</span>
+                                    </span>
+                                </div>
+                                <!--//PRICE END-->
+                                
+                            </div>                            
+                            <!--//HEAD PRICE DETAIL END-->
+                            
+                            <!--FEATURE LIST START-->
+                            <div class="generic_feature_list">
+                              <mat-accordion class="example-headers-align">
+                                <mat-expansion-panel *ngFor="let item of budgetPackageItems; last as isLast" [expanded]="step === item.step" (opened)="setStep(item.step)" (closed)="closeStep()">
+                                    <mat-expansion-panel-header>
+                                      <mat-panel-title>
+                                        {{item.title}}
+                                      </mat-panel-title>
+                                    </mat-expansion-panel-header>
+                                
+                                    <div class="generic_feature_list">
+                                        <ul>
+                                            <li *ngFor="let subItem of item.subItems; last as isLast" >
+                                              <span>{{subItem.label}}</span>
+                                              &nbsp;{{subItem.desc}}
+                                            </li>
+                                        </ul>
+                                    </div>
+                                
+                                    <mat-action-row>
+                                      <button mat-button color="warn" (click)="prevStep()">Previous</button>
+                                      <button mat-button color="primary" (click)="nextStep()">Next</button>
+                                    </mat-action-row>
+                                </mat-expansion-panel>
+                              </mat-accordion>
+                            </div>
+                            <!--//FEATURE LIST END-->
+                        </div>
+                        <!--//PRICE CONTENT END-->
+                    </div>
+                    
+                    <div class="col-md-4">
+                    
+                      <!--PRICE CONTENT START-->
+                        <div class="generic_content active clearfix">
+                            
+                            <!--HEAD PRICE DETAIL START-->
+                            <div class="generic_head_price clearfix">
+                            
+                                <!--HEAD CONTENT START-->
+                                <div class="generic_head_content clearfix">
+                                
+                                  <!--HEAD START-->
+                                    <div class="head_bg"></div>
+                                    <div class="head">
+                                        <span>Basic Package</span>
+                                    </div>
+                                    <!--//HEAD END-->
+                                    
+                                </div>
+                                <!--//HEAD CONTENT END-->
+                                
+                                <!--PRICE START-->
+                                <div class="generic_price_tag clearfix">	
+                                    <span class="price">
+                                        <span class="sign">₹</span>
+                                        <span class="currency">1,680</span>
+                                        <span class="month">/sq.ft</span>
+                                    </span>
+                                </div>
+                                <!--//PRICE END-->
+                            </div>                            
+                            <!--//HEAD PRICE DETAIL END-->
+                            
+                            <!--FEATURE LIST START-->
+                            <div class="generic_feature_list">
+                              <mat-accordion class="example-headers-align">
+                                <mat-expansion-panel *ngFor="let item of basicPackageItems; last as isLast" [expanded]="step === item.step" (opened)="setStep(item.step)" (closed)="closeStep()">
+                                    <mat-expansion-panel-header>
+                                      <mat-panel-title>
+                                        {{item.title}}
+                                      </mat-panel-title>
+                                    </mat-expansion-panel-header>
+                                
+                                    <div class="generic_feature_list">
+                                        <ul>
+                                            <li *ngFor="let subItem of item.subItems; last as isLast" >
+                                              <span>{{subItem.label}}</span>
+                                              &nbsp;{{subItem.desc}}
+                                            </li>
+                                        </ul>
+                                    </div>
+                                
+                                    <mat-action-row>
+                                      <button mat-button color="warn" (click)="prevStep()">Previous</button>
+                                      <button mat-button color="primary" (click)="nextStep()">Next</button>
+                                    </mat-action-row>
+                                </mat-expansion-panel>
+                              </mat-accordion>
+                            </div>
+                            <!--//FEATURE LIST END-->
+                      </div> 
+                      <!--//PRICE CONTENT END-->
+                    </div>
+                    <div class="col-md-4">
+                    
+                      <!--PRICE CONTENT START-->
+                        <div class="generic_content clearfix">
+                            
+                            <!--HEAD PRICE DETAIL START-->
+                            <div class="generic_head_price clearfix">
+                            
+                                <!--HEAD CONTENT START-->
+                                <div class="generic_head_content clearfix">
+                                
+                                  <!--HEAD START-->
+                                    <div class="head_bg"></div>
+                                    <div class="head">
+                                        <span>Classic Package</span>
+                                    </div>
+                                    <!--//HEAD END-->
+                                    
+                                </div>
+                                <!--//HEAD CONTENT END-->
+                                
+                                <!--PRICE START-->
+                                <div class="generic_price_tag clearfix">	
+                                    <span class="price">
+                                        <span class="sign">₹</span>
+                                        <span class="currency">1,830</span>
+                                        <span class="month">/sq.ft</span>
+                                    </span>
+                                </div>
+                                <!--//PRICE END-->
+                                
+                            </div>                            
+                            <!--//HEAD PRICE DETAIL END-->
+                            
+                            <!--FEATURE LIST START-->
+                            <div class="generic_feature_list">
+                              <mat-accordion class="example-headers-align">
+                                <mat-expansion-panel *ngFor="let item of classicPackageItems; last as isLast" [expanded]="step === item.step" (opened)="setStep(item.step)" (closed)="closeStep()">
+                                    <mat-expansion-panel-header>
+                                      <mat-panel-title>
+                                        {{item.title}}
+                                      </mat-panel-title>
+                                    </mat-expansion-panel-header>
+                                
+                                    <div class="generic_feature_list">
+                                        <ul>
+                                            <li *ngFor="let subItem of item.subItems; last as isLast" >
+                                              <span>{{subItem.label}}</span>
+                                              &nbsp;{{subItem.desc}}
+                                            </li>
+                                        </ul>
+                                    </div>
+                                
+                                    <mat-action-row>
+                                      <button mat-button color="warn" (click)="prevStep()">Previous</button>
+                                      <button mat-button color="primary" (click)="nextStep()">Next</button>
+                                    </mat-action-row>
+                                </mat-expansion-panel>
+                              </mat-accordion>
+                            </div>
+                            <!--//FEATURE LIST END-->
+                        </div>
+                        <!--//PRICE CONTENT END-->
+                            
+                    </div>
+                </div>	
+                <!--//BLOCK ROW END-->
+                
+            </div>
+    </section>
+        
+    </div>
+</div>
