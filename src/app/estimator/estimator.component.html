@@ -53,36 +53,36 @@
         <h2>Your Cost Estimate</h2>
         <div class="results-content">
             <div class="row">
-                <div class="col1 col">
-                    <h4>Budget Package - ₹1,585/sq.ft (Incl. GST)</h4>
+                <div class="col1 col" *ngFor="let calc of calculationsSet1; let i = index">
+                    <h4>{{calc.name}} - {{calc.price | currency:'INR':'symbol':'1.0-0'}}/sq.ft (Incl. GST)</h4>
                     <div class="results__col">
                         <div class="results_item">
                             <ul class="list">
                                 <li class="list-item">
                                     <div class="list-item__col">
                                         <strong>Built Up Cost</strong>
-                                        <p class="small">2161 sq.ft * ₹1,585/sq.ft</p>
+                                        <p class="small">{{builtUpArea * 0.8 | number}} sq.ft * {{calc.price | currency:'INR':'symbol':'1.0-0'}}/sq.ft</p>
                                     </div>
                                     <div class="list-item__col">
-                                        <strong>₹34,25,185</strong>
+                                        <strong>{{calc.buildUpCost | currency:'INR':'symbol':'1.0-0'}}</strong>
                                     </div>
                                 </li>
                                 <li class="list-item">
                                     <div class="list-item__col">
                                         <strong>Car Parking Cost</strong>
-                                        <p class="small">1 * 130 sq.ft * ₹951/sq.ft</p>
+                                        <p class="small">{{noCarParking | number}} * {{carParkingArea}} sq.ft * {{calc.carParkingPrice | currency:'INR':'symbol':'1.0-0'}}/sq.ft</p>
                                     </div>
                                     <div class="list-item__col">
-                                        <strong>₹1,23,630</strong>
+                                        <strong>{{calc.carParkingCost | currency:'INR':'symbol':'1.0-0'}}</strong>
                                     </div>
                                 </li>
                                 <li class="list-item">
                                     <div class="list-item__col">
                                         <strong>Balcony &amp; Utility Cost</strong>
-                                        <p class="small">32 sq.ft * ₹951/sq.ft</p>
+                                        <p class="small">{{utilityArea}} sq.ft * {{calc.utilityPrice | currency:'INR':'symbol':'1.0-0'}}/sq.ft</p>
                                     </div>
                                     <div class="list-item__col">
-                                        <strong>₹30,432</strong>
+                                        <strong>{{calc.utilityCost | currency:'INR':'symbol':'1.0-0'}}</strong>
                                     </div>
                                 </li>
                                 <li class="list-item">
@@ -90,133 +90,45 @@
                                         <strong>Total Cost</strong>
                                     </div>
                                     <div class="list-item__col">
-                                        <strong class="total text-primary">₹35,79,247</strong>
+                                        <strong class="total text-primary">{{(calc.buildUpCost + calc.carParkingCost + calc.utilityCost) | currency:'INR':'symbol':'1.0-2'}}</strong>
                                     </div>
                                 </li>
                             </ul>
                         </div>
                     </div>
-                </div>
-                <div class="col2 col">
-                        <h4>Basic Package - ₹1,680/sq.ft (Incl. GST)</h4>
-                        <div class="results__col">
-                            <div class="results_item">
-                                <ul class="list">
-                                    <li class="list-item">
-                                        <div class="list-item__col">
-                                            <strong>Built Up Cost</strong>
-                                            <p class="small">2161 sq.ft * ₹1,585/sq.ft</p>
-                                        </div>
-                                        <div class="list-item__col">
-                                            <strong>₹34,25,185</strong>
-                                        </div>
-                                    </li>
-                                    <li class="list-item">
-                                        <div class="list-item__col">
-                                            <strong>Car Parking Cost</strong>
-                                            <p class="small">1 * 130 sq.ft * ₹951/sq.ft</p>
-                                        </div>
-                                        <div class="list-item__col">
-                                            <strong>₹1,23,630</strong>
-                                        </div>
-                                    </li>
-                                    <li class="list-item">
-                                        <div class="list-item__col">
-                                            <strong>Balcony &amp; Utility Cost</strong>
-                                            <p class="small">32 sq.ft * ₹951/sq.ft</p>
-                                        </div>
-                                        <div class="list-item__col">
-                                            <strong>₹30,432</strong>
-                                        </div>
-                                    </li>
-                                    <li class="list-item">
-                                        <div class="list-item__col">
-                                            <strong>Total Cost</strong>
-                                        </div>
-                                        <div class="list-item__col">
-                                            <strong class="total text-primary">₹35,79,247</strong>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                </div>
-                <div class="col3 col">
-                        <h4>Classic Package - ₹1,830/sq.ft (Incl. GST)</h4>
-                        <div class="results__col">
-                            <div class="results_item">
-                                <ul class="list">
-                                    <li class="list-item">
-                                        <div class="list-item__col">
-                                            <strong>Built Up Cost</strong>
-                                            <p class="small">2161 sq.ft * ₹1,585/sq.ft</p>
-                                        </div>
-                                        <div class="list-item__col">
-                                            <strong>₹34,25,185</strong>
-                                        </div>
-                                    </li>
-                                    <li class="list-item">
-                                        <div class="list-item__col">
-                                            <strong>Car Parking Cost</strong>
-                                            <p class="small">1 * 130 sq.ft * ₹951/sq.ft</p>
-                                        </div>
-                                        <div class="list-item__col">
-                                            <strong>₹1,23,630</strong>
-                                        </div>
-                                    </li>
-                                    <li class="list-item">
-                                        <div class="list-item__col">
-                                            <strong>Balcony &amp; Utility Cost</strong>
-                                            <p class="small">32 sq.ft * ₹951/sq.ft</p>
-                                        </div>
-                                        <div class="list-item__col">
-                                            <strong>₹30,432</strong>
-                                        </div>
-                                    </li>
-                                    <li class="list-item">
-                                        <div class="list-item__col">
-                                            <strong>Total Cost</strong>
-                                        </div>
-                                        <div class="list-item__col">
-                                            <strong class="total text-primary">₹35,79,247</strong>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
                 </div>
             </div>
             <div class="row">
-                <div class="col1 col">
-                    <h4>Premium Package - ₹1,920/sq.ft (Incl. GST)</h4>
+                <div class="col1 col" *ngFor="let calc of calculationsSet2; let i = index">
+                    <h4>{{calc.name}} - {{calc.price | currency:'INR':'symbol':'1.0-0'}}/sq.ft (Incl. GST)</h4>
                     <div class="results__col">
                         <div class="results_item">
                             <ul class="list">
                                 <li class="list-item">
                                     <div class="list-item__col">
                                         <strong>Built Up Cost</strong>
-                                        <p class="small">2161 sq.ft * ₹1,585/sq.ft</p>
+                                        <p class="small">{{builtUpArea * 0.8 | number}} sq.ft * {{calc.price | currency:'INR':'symbol':'1.0-0'}}/sq.ft</p>
                                     </div>
                                     <div class="list-item__col">
-                                        <strong>₹34,25,185</strong>
+                                        <strong>{{calc.buildUpCost | currency:'INR':'symbol':'1.0-0'}}</strong>
                                     </div>
                                 </li>
                                 <li class="list-item">
                                     <div class="list-item__col">
                                         <strong>Car Parking Cost</strong>
-                                        <p class="small">1 * 130 sq.ft * ₹951/sq.ft</p>
+                                        <p class="small">{{noCarParking | number}} * {{carParkingArea}} sq.ft * {{calc.carParkingPrice | currency:'INR':'symbol':'1.0-0'}}/sq.ft</p>
                                     </div>
                                     <div class="list-item__col">
-                                        <strong>₹1,23,630</strong>
+                                        <strong>{{calc.carParkingCost | currency:'INR':'symbol':'1.0-0'}}</strong>
                                     </div>
                                 </li>
                                 <li class="list-item">
                                     <div class="list-item__col">
                                         <strong>Balcony &amp; Utility Cost</strong>
-                                        <p class="small">32 sq.ft * ₹951/sq.ft</p>
+                                        <p class="small">{{utilityArea}} sq.ft * {{calc.utilityPrice | currency:'INR':'symbol':'1.0-0'}}/sq.ft</p>
                                     </div>
                                     <div class="list-item__col">
-                                        <strong>₹30,432</strong>
+                                        <strong>{{calc.utilityCost | currency:'INR':'symbol':'1.0-0'}}</strong>
                                     </div>
                                 </li>
                                 <li class="list-item">
@@ -224,65 +136,12 @@
                                         <strong>Total Cost</strong>
                                     </div>
                                     <div class="list-item__col">
-                                        <strong class="total text-primary">₹35,79,247</strong>
+                                        <strong class="total text-primary">{{(calc.buildUpCost + calc.carParkingCost + calc.utilityCost) | currency:'INR':'symbol':'1.0-2'}}</strong>
                                     </div>
                                 </li>
                             </ul>
                         </div>
                     </div>
-                </div>
-                <div class="col2 col">
-                        <h4>Royale Package - ₹2,040/sq.ft (Incl. GST)</h4>
-                        <div class="results__col">
-                            <div class="results_item">
-                                <ul class="list">
-                                    <li class="list-item">
-                                        <div class="list-item__col">
-                                            <strong>Built Up Cost</strong>
-                                            <p class="small">2161 sq.ft * ₹1,585/sq.ft</p>
-                                        </div>
-                                        <div class="list-item__col">
-                                            <strong>₹34,25,185</strong>
-                                        </div>
-                                    </li>
-                                    <li class="list-item">
-                                        <div class="list-item__col">
-                                            <strong>Car Parking Cost</strong>
-                                            <p class="small">1 * 130 sq.ft * ₹951/sq.ft</p>
-                                        </div>
-                                        <div class="list-item__col">
-                                            <strong>₹1,23,630</strong>
-                                        </div>
-                                    </li>
-                                    <li class="list-item">
-                                        <div class="list-item__col">
-                                            <strong>Balcony &amp; Utility Cost</strong>
-                                            <p class="small">32 sq.ft * ₹951/sq.ft</p>
-                                        </div>
-                                        <div class="list-item__col">
-                                            <strong>₹30,432</strong>
-                                        </div>
-                                    </li>
-                                    <li class="list-item">
-                                        <div class="list-item__col">
-                                            <strong>Total Cost</strong>
-                                        </div>
-                                        <div class="list-item__col">
-                                            <strong class="total text-primary">₹35,79,247</strong>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                </div>
-                <div class="col3 col">
-                        <h4>Imperia Package - ₹2,200/sq.ft (Incl. GST)</h4>
-                        <div class="results__col">
-                            <div *ngFor="let content of contents_3; last as isLast" class="results_item">  
-                                <div class="results_subitem">{{ content.text }}</div>
-                                <mat-icon *ngIf="!isLast" class="material-icons">arrow_downward</mat-icon>
-                            </div> 
-                        </div>
                 </div>
             </div>
             

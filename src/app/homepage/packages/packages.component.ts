@@ -1,4 +1,11 @@
 import { Component, OnInit } from '@angular/core';
+import {BudgetPackage, BasicPackage, ClassicPackage, PremiumPackage, ImperiaPackage} from '../../constants';
+
+interface IPackagesType {
+  name: string;
+  price: Number;
+  content: IPackagesItems [];
+}
 
 interface IPackagesItems {
   step: Number;
@@ -18,6 +25,33 @@ interface IPackagesSubItems {
 })
 export class PackagesComponent implements OnInit {
   step = 0;
+
+  slideConfig = {  
+    slidesToShow: 3,  
+    slidesToScroll: 1,  
+    dots: false,  
+    infinite: false,
+    enabled: true,
+    autoplay: false,
+    arrows: true,
+    centerMode: false,
+    'responsive': [
+      {
+        'breakpoint': 1024,
+        settings: {
+          slidesToShow: 2
+        }
+      },
+      {
+        'breakpoint': 920,
+        settings: {
+          slidesToShow: 1
+        }
+      }
+    ]
+    // nextArrow: "<div class='nav-btn next-slide'></div>",
+    // prevArrow: "<div class='nav-btn prev-slide'></div>"
+  };  
 
   budgetPackageItems: IPackagesItems[] = [
     {step: 1, title: 'Designs & Drawings', subItems: [ {label: 'Basic Elevation', desc: ''},  {label: 'Structural Design', desc: ''}]},
@@ -123,6 +157,14 @@ export class PackagesComponent implements OnInit {
     {step: 10, title: 'Customisation Costs', subItems: []},   
   ];
 
+  packages: IPackagesType[] = [
+    { name: BudgetPackage.name.valueOf(), price: BudgetPackage.price.valueOf(), content : this.budgetPackageItems},
+    { name: BasicPackage.name.valueOf(), price: BasicPackage.price.valueOf(), content : this.basicPackageItems},
+    { name: ClassicPackage.name.valueOf(), price: ClassicPackage.price.valueOf(), content : this.classicPackageItems},
+    { name: PremiumPackage.name.valueOf(), price: PremiumPackage.price.valueOf(), content : this.classicPackageItems},
+    { name: ImperiaPackage.name.valueOf(), price: ImperiaPackage.price.valueOf(), content : this.classicPackageItems}
+  ];
+
   constructor() { }
 
   ngOnInit(): void {
@@ -143,6 +185,10 @@ export class PackagesComponent implements OnInit {
   closeStep() {
     //this.step--;
     //this.prevStep();
+  }
+
+  breakpoint(e) {
+    console.log('breakpoint');
   }
 
 }
