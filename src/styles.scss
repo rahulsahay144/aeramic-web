@@ -39,6 +39,12 @@
     font-family: Rufina,serif;
     font-size: 13px;
     background-color: #fff;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  .clearfix {
+    clear:both;
+    min-height:15px;
   }
 
   .slick-prev, .slick-next {

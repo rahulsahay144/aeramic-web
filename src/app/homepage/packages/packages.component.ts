@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {BudgetPackage, BasicPackage, ClassicPackage, PremiumPackage, ImperiaPackage} from '../../constants';
+import {BudgetPackage, BasicPackage, ClassicPackage, PremiumPackage, ImperiaPackage, RoyalePackage} from '../../constants';
 
 interface IPackagesType {
   name: string;
@@ -162,6 +162,7 @@ export class PackagesComponent implements OnInit {
     { name: BasicPackage.name.valueOf(), price: BasicPackage.price.valueOf(), content : this.basicPackageItems},
     { name: ClassicPackage.name.valueOf(), price: ClassicPackage.price.valueOf(), content : this.classicPackageItems},
     { name: PremiumPackage.name.valueOf(), price: PremiumPackage.price.valueOf(), content : this.classicPackageItems},
+    { name: RoyalePackage.name.valueOf(), price: RoyalePackage.price.valueOf(), content : this.classicPackageItems},
     { name: ImperiaPackage.name.valueOf(), price: ImperiaPackage.price.valueOf(), content : this.classicPackageItems}
   ];
 

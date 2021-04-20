@@ -27,7 +27,7 @@ export enum PremiumPackage {
 }
 
 export enum RoyalePackage {
-    name = 'Imperia Package',
+    name = 'Royale Package',
     price = 2040,
     carParkingPrice = 1224,
     utilityPrice = 1224

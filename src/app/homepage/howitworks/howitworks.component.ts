@@ -9,7 +9,10 @@ export class HowitworksComponent implements OnInit {
   slides = [
     {img: "../../../assets/images/work1.jpeg", text: "Raise a Request", pointer: "1"},
     {img: "../../../assets/images/work2.jpeg", text: "Meet our Expert", pointer: "2"},
-    {img: "../../../assets/images/work3.jpeg", text: "Book with Us", pointer: "3"}
+    {img: "../../../assets/images/work3.jpeg", text: "Book with Us", pointer: "3"},
+    {img: "../../../assets/images/work1.jpeg", text: "Book with Us", pointer: "4"},
+    {img: "../../../assets/images/work2.jpeg", text: "Book with Us", pointer: "5"},
+    {img: "../../../assets/images/work3.jpeg", text: "Book with Us", pointer: "6"}
   ];
 
   stepTitle: String = '';
@@ -20,12 +23,12 @@ export class HowitworksComponent implements OnInit {
   slideConfig = {  
     slidesToShow: 1,  
     slidesToScroll: 1,  
-    dots: true,  
+    dots: false,  
     infinite: true,
     enabled: true,
     autoplay: true,
     //draggable: false,
-    autoplaySpeed: 2000,
+    autoplaySpeed: 3000,
     arrows: true,
     lazyLoad: 'progressive',
     adaptiveHeight: false, 

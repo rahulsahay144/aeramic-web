@@ -1,6 +1,32 @@
 <div class="howitworks__container">
     <h2>How it works</h2>
     <h4>Our steps are simple and facile to understand: Plan - Build - Track - Settle in.</h4>
+    <div class="breadcrumb-pagination">
+        <div [ngClass]="(stepNum == 1) ? 'active': (stepNum > 1) ? 'completed' : 'todo'">
+          <span>1</span>
+          <p>Raise a Request</p>   
+        </div>
+        <div [ngClass]="(stepNum == 2) ? 'active': (stepNum > 2) ? 'completed' : 'todo'">
+          <span>2</span>
+          <p>Meet our Expert</p>
+        </div>
+        <div [ngClass]="(stepNum == 3) ? 'active': (stepNum > 3) ? 'completed' : 'todo'">
+          <span>3</span>
+          <p>Book with Us</p>
+        </div>
+        <div [ngClass]="(stepNum == 4) ? 'active': (stepNum > 4) ? 'completed' : 'todo'">
+            <span>4</span>
+            <p>Receive Designs</p>
+        </div>
+        <div [ngClass]="(stepNum == 5) ? 'active': (stepNum > 5) ? 'completed' : 'todo'">
+            <span>5</span>
+            <p>Track & Transact</p>
+        </div>
+        <div [ngClass]="(stepNum == 6) ? 'active': (stepNum > 6) ? 'completed' : 'todo'">
+            <span>6</span>
+            <p>Settle In</p>
+        </div>
+    </div>
     <div class="howitworks-content">
         <ngx-slick-carousel class="carousel" 
             #slickModal="slick-carousel" 
