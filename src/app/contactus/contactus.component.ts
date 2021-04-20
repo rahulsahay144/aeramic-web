@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContactusComponent implements OnInit {
 
+  initForm = true;
+  
   constructor() { }
 
   ngOnInit(): void {
