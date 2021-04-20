@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject, Input, OnChanges, SimpleChanges, SimpleChange } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
 
@@ -24,6 +24,8 @@ export class RequestComponent implements OnInit {
 
   email: string;
   formsubmitted: boolean;
+
+  @Input() initForm: boolean;
 
   showBusy: boolean;
 
