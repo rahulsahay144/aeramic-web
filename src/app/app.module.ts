@@ -23,6 +23,9 @@ import { ProjectsComponent } from './projects/projects.component';
 import { EstimatorComponent } from './estimator/estimator.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PackagesComponent } from './homepage/packages/packages.component';
+import { ContactusComponent } from './contactus/contactus.component';
+import { RequestComponent } from './contactus/request/request.component';
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [
@@ -38,7 +41,9 @@ import { PackagesComponent } from './homepage/packages/packages.component';
     HowitworksComponent,
     ProjectsComponent,
     EstimatorComponent,
-    PackagesComponent
+    PackagesComponent,
+    ContactusComponent,
+    RequestComponent
   ],
   imports: [
     BrowserModule,
@@ -52,8 +57,15 @@ import { PackagesComponent } from './homepage/packages/packages.component';
     NgxGalleryModule,
     FormsModule,
     ReactiveFormsModule,
+    ToastrModule.forRoot({
+      timeOut: 4000,
+      positionClass: 'toast-top-center',
+      preventDuplicates: true,
+      messageClass: "o2-toast"
+    }),
   ],
   providers: [],
+  entryComponents: [RequestComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
