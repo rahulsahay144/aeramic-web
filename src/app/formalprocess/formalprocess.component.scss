@@ -1,0 +1,182 @@
+.formalprocess__container {
+    height: 100%;
+    width: 100%;
+    background-color: #FFF;
+  
+    .banner {
+        position: relative;
+        min-height: 450px;
+        height: 100%;
+        //display: table;
+        width: 100%;
+        padding: 20px;
+        background: #FFF;
+        // background: linear-gradient(to bottom, #0498d6 0%,#02b2e9 50%,#7db9e8 100%);
+        // background: url('../../assets/images/aboutus_background.jpg') no-repeat center center/cover #02b2e9;
+        // background-size: 100% 100%;
+        background:
+        linear-gradient(
+        rgba(0, 0, 0, 0.6),
+        rgba(0, 0, 0, 0.6)
+        ),
+        url('../../assets/images/formalprocess-background.jpeg') no-repeat center center/cover;
+        filter: saturate(1.3);
+  
+        @media (max-width: 648px) {
+          padding: 10px;
+        }
+
+        .form-card {
+            box-shadow:  2px 2px 50px  rgba(0,0,0,0.2);
+            //height: 300px;
+            //width: 350px;
+          }
+        
+    
+        .banner-head {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          padding-top: 20px;
+  
+          @media (max-width: 648px) {
+            width: 100%;
+            padding: 0;
+            align-items: center;
+          }
+      
+          .header_container {
+            width: 100%;
+            margin-top: 14%;
+    
+            .header_content {
+                display: flex;
+                flex: 1;
+                flex-direction: column;
+                // background: #f6f6f6;
+                //padding: 20px 10px;
+                //min-height: 250px;
+                //box-shadow: 0px 15px 10px -15px rgba(0,0,0,0.6);
+                padding: 10px;
+    
+                @media (max-width: 598px) {
+                    padding: 0 10px;
+                }
+                
+                h1 {
+                    font-size: 3rem;
+                    color: #fff;
+                    font-weight: 700;
+                    //line-height: 60px;
+                }
+    
+                p {
+                    font-size: 1.2rem;
+                    color: #fff;
+                }
+
+                strong {
+                    color: #fff;
+                }
+            }
+          }
+        }
+      }
+
+      .stepper__container {
+            display: flex;
+            //min-height: 75vh;
+            //align-items: center;
+            //height: 100%;
+            flex-direction: column;
+            padding: 0;
+            position: relative;
+            //background: rgba(255, 80, 41, 0.05);
+            width: 100%;
+            align-items: center;
+
+            ::ng-deep {
+                 .mat-step-header {
+                    .mat-step-icon-selected, .mat-step-icon {
+                        background-color: #FFF; 
+                        font-size: 2rem;
+                     }
+                 }
+
+                 .mat-step-icon {
+                    height: 40px;
+                    width: 40px;
+                    border: 1px solid #1A1D1E;
+                 }
+
+                 .mat-stepper-vertical-line::before {
+                    left: 8px;
+                    border-left-width: 2px;
+                    border-left-style: dotted;
+                 }
+
+                 .mat-vertical-stepper-content {
+                    visibility: visible !important;
+                    height: 100% !important;
+                  }
+            }
+
+            i {
+                color: orange
+            }
+        
+            .material-icons {
+                font-weight: bold;
+            }
+
+            .stepper__section {
+                width: 60%;
+                background-color: transparent;
+
+                @media (max-width: 1024px) {
+                    width: 80%;
+                }
+
+                @media (max-width: 599px) {
+                    width: 100%;
+                }
+
+                .step-content__container {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-around;
+                    align-items: center;
+                    padding: 20px 0;
+
+                    .step-image {
+                        width: 30%;
+                        padding-left: 20px;
+
+                        @media (max-width: 599px) {
+                            & > i {
+                                font-size: 4em;
+                            }
+                        }
+                        
+                    }
+
+                    .step-description {
+                        width: 70%;
+                        font-size: 1rem;
+
+                        li {
+                            margin: 0 0 10px 0;
+                        }
+                    }
+                }
+            }
+      }
+
+      .mat-stepper-vertical {
+        margin-top: 8px;
+      }
+      
+      .mat-form-field {
+        margin-top: 16px;
+      }  
+  }

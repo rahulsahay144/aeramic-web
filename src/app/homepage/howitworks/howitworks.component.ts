@@ -10,9 +10,9 @@ export class HowitworksComponent implements OnInit {
     {img: "../../../assets/images/work1.jpeg", text: "Raise a Request", pointer: "1"},
     {img: "../../../assets/images/work2.jpeg", text: "Meet our Expert", pointer: "2"},
     {img: "../../../assets/images/work3.jpeg", text: "Book with Us", pointer: "3"},
-    {img: "../../../assets/images/work1.jpeg", text: "Book with Us", pointer: "4"},
-    {img: "../../../assets/images/work2.jpeg", text: "Book with Us", pointer: "5"},
-    {img: "../../../assets/images/work3.jpeg", text: "Book with Us", pointer: "6"}
+    {img: "../../../assets/images/work1.jpeg", text: "Receive Designs", pointer: "4"},
+    {img: "../../../assets/images/work2.jpeg", text: "Track & Transact", pointer: "5"},
+    {img: "../../../assets/images/work3.jpeg", text: "Settle In", pointer: "6"}
   ];
 
   stepTitle: String = '';

@@ -1,0 +1,166 @@
+<div class="formalprocess__container">
+    <div class="banner">
+            <div class="banner-head">
+                <div class="header_container">
+                    <div class="header_content">
+                            <h1>How it works</h1>
+                            <p class="section-subtitle mb-4">Our steps are simple and easy to understand: <br/><strong>Plan - Build - Track - Settle in</strong></p>
+                    </div>
+                </div>
+            </div>
+    </div>
+    <div class="stepper__container">
+        <mat-vertical-stepper #stepper class="stepper__section">
+            <mat-step [completed]="false">
+                <ng-template matStepLabel>Raise a Request</ng-template>
+                <div class="step-content__container">
+                    <div class="step-image">
+                        <i class="fas fa-fist-raised fa-6x"></i>
+                    </div>
+                    <div class="step-description">
+                        <ul class="fa-ul">
+                            <li>
+                                <span class="fa-li">
+                                    <i class="fas fa-check"></i>
+                                </span>
+                                Raise a service request or call us at +91 XXXX XXX XXX. Our team will get in touch with you to understand your requirements in more detail.
+                            </li>
+                            <li>
+                                <span class="fa-li">
+                                    <i class="fas fa-check"></i>
+                                </span>
+                                They will arrange the meeting with our technical expert.
+                            </li>
+                          </ul>
+                    </div>
+                </div>
+            </mat-step>
+            <mat-step [completed]="false">
+                <ng-template matStepLabel>Meet our Expert</ng-template>
+                <div class="step-content__container">
+                    <div class="step-image">
+                        <i class="fas fa-handshake fa-6x"></i>
+                    </div>
+                    <div class="step-description">
+                        <ul class="fa-ul">
+                            <li>
+                                <span class="fa-li">
+                                    <i class="fas fa-check"></i>
+                                </span>
+                                Experts will guide you in selecting the right package and solve any queries that you may have.
+                            </li>
+                          </ul>
+                    </div>
+                </div>
+            </mat-step>
+            <mat-step [completed]="false">
+              <ng-template matStepLabel>Book with Us</ng-template>
+              <div class="step-content__container">
+                <div class="step-image">
+                    <i class="fas fa-file-signature fa-6x"></i>
+                </div>
+                <div class="step-description">
+                    <ul class="fa-ul">
+                        <li>
+                            <span class="fa-li">
+                                <i class="fas fa-check"></i>
+                            </span>
+                            Good to go ! You pay 5% of the estimated project cost as the booking amount
+                        </li>
+                      </ul>
+                </div>
+            </div>
+            </mat-step>
+            <mat-step [completed]="false">
+                <ng-template matStepLabel>Receive Designs</ng-template>
+                <div class="step-content__container">
+                    <div class="step-image">
+                        <i class="fas fa-pencil-ruler fa-6x"></i>
+                    </div>
+                    <div class="step-description">
+                        <ul class="fa-ul">
+                            <li>
+                                <span class="fa-li">
+                                    <i class="fas fa-check"></i>
+                                </span>
+                                Our architects will provide exhaustive drawings and designs till you are completely satisfied.
+                            </li>
+                            <li>
+                                <span class="fa-li">
+                                    <i class="fas fa-check"></i>
+                                </span>
+                                Designs include floor plans, 3D elevations, electrical, plumbing and structural designs
+                            </li>
+                            <li>
+                                <span class="fa-li">
+                                    <i class="fas fa-check"></i>
+                                </span>
+                                Project manager is allotted and project management team works on your contract.
+                            </li>
+                            <li>
+                                <span class="fa-li">
+                                    <i class="fas fa-check"></i>
+                                </span>
+                                All project details like specifications, work and payment schedules etc are fed into the system.
+                            </li>
+                          </ul>
+                    </div>
+                </div>
+            </mat-step>
+            <mat-step [completed]="false">
+                <ng-template matStepLabel>Track & Transact</ng-template>
+                <div class="step-content__container">
+                    <div class="step-image">
+                        <i class="fas fa-rupee-sign fa-6x"></i>
+                    </div>
+                    <div class="step-description">
+                        <ul class="fa-ul">
+                            <li>
+                                <span class="fa-li">
+                                    <i class="fas fa-check"></i>
+                                </span>
+                                To ensure absolute trust, Aeramic provides an escrow model where you transfer the amount for every stage of the project.
+                            </li>
+                            <li>
+                                <span class="fa-li">
+                                    <i class="fas fa-check"></i>
+                                </span>
+                                Only on successful completion of a stage,amount is transferred to the contractor.
+                            </li>
+                            <li>
+                                <span class="fa-li">
+                                    <i class="fas fa-check"></i>
+                                </span>
+                                Our project management team tracks and monitors your project through our system and processes - through regular site visits.
+                            </li>
+                            <li>
+                                <span class="fa-li">
+                                    <i class="fas fa-check"></i>
+                                </span>
+                                You get the project updates through our customer application.
+                            </li>
+                          </ul>
+                    </div>
+                </div>
+            </mat-step>
+            <mat-step [completed]="false">
+                <ng-template matStepLabel>Settle In</ng-template>
+                <div class="step-content__container">
+                    <div class="step-image">
+                        <i class="fas fa-home fa-6x"></i>
+                    </div>
+                    <div class="step-description">
+                        <ul class="fa-ul">
+                            <li>
+                                <span class="fa-li">
+                                    <i class="fas fa-check"></i>
+                                </span>
+                                The last and final stage. We make sure you are well settled in your new home. Our journey together doesn't end here. We provide <strong>15 years of warranty</strong>.
+                            </li>
+                          </ul>
+                    </div>
+                </div>
+            </mat-step>
+          </mat-vertical-stepper>
+    </div>
+</div>

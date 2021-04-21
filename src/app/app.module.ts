@@ -26,6 +26,7 @@ import { PackagesComponent } from './homepage/packages/packages.component';
 import { ContactusComponent } from './contactus/contactus.component';
 import { RequestComponent } from './contactus/request/request.component';
 import { ToastrModule } from 'ngx-toastr';
+import { FormalprocessComponent } from './formalprocess/formalprocess.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import { ToastrModule } from 'ngx-toastr';
     EstimatorComponent,
     PackagesComponent,
     ContactusComponent,
-    RequestComponent
+    RequestComponent,
+    FormalprocessComponent
   ],
   imports: [
     BrowserModule,
