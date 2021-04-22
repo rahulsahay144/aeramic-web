@@ -3,7 +3,9 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  dataURI: 'https://cfs94y22ak.execute-api.ap-south-1.amazonaws.com/stage/aeramic/',
+  imageURI: 'https://aeramic.s3.ap-south-1.amazonaws.com/images/',
 };
 
 /*

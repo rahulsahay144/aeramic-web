@@ -1,5 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import { NgxGalleryOptions, NgxGalleryImage, NgxGalleryAnimation } from '@kolkov/ngx-gallery';
+import { ApiService } from '../api.service';
+import { NgxSpinnerService } from "ngx-spinner";
 
 @Component({
   selector: 'app-projects',
@@ -9,11 +11,11 @@ import { NgxGalleryOptions, NgxGalleryImage, NgxGalleryAnimation } from '@kolkov
 export class ProjectsComponent implements OnInit {
 
   galleryOptions: NgxGalleryOptions[];
-  galleryImages: NgxGalleryImage[];
+  galleryImages: NgxGalleryImage[] = [];
 
-  constructor() { }
+  constructor(private apiService: ApiService, private spinner: NgxSpinnerService) { 
+    this.spinner.show();
 
-  ngOnInit() {
     this.galleryOptions = [
       {
         width: '600px',
@@ -51,85 +53,21 @@ export class ProjectsComponent implements OnInit {
         arrowNextIcon: 'fa fa-arrow-circle-right'
       }
     ];
+  }
 
-    this.galleryImages = [
-      {
-        small: '../../assets/images/projects/Project_1.jpeg',
-        medium: '../../assets/images/projects/Project_1.jpeg',
-        big: '../../assets/images/projects/Project_1.jpeg',
-        description: "Some caption",
-        label: "test"
-      },
-      {
-        small: '../../assets/images/projects/Project_2.jpeg',
-        medium: '../../assets/images/projects/Project_2.jpeg',
-        big: '../../assets/images/projects/Project_2.jpeg',
-        description: "Some caption",
-        label: "test"
-      },
-      {
-        small: '../../assets/images/projects/Project_3.jpeg',
-        medium: '../../assets/images/projects/Project_3.jpeg',
-        big: '../../assets/images/projects/Project_3.jpeg',
-        description: "Some caption",
-        label: "test"
-      },{
-        small: '../../assets/images/projects/Project_4.jpeg',
-        medium: '../../assets/images/projects/Project_4.jpeg',
-        big: '../../assets/images/projects/Project_4.jpeg',
-        description: "Some caption",
-        label: "test"
-      },   
-      {
-        small: '../../assets/images/projects/Project_5.jpeg',
-        medium: '../../assets/images/projects/Project_5.jpeg',
-        big: '../../assets/images/projects/Project_5.jpeg',
-        description: "Some caption",
-        label: "test"
-      },
-      {
-        small: '../../assets/images/projects/Project_6.jpeg',
-        medium: '../../assets/images/projects/Project_6.jpeg',
-        big: '../../assets/images/projects/Project_6.jpeg',
-        description: "Some caption",
-        label: "test"
-      },
-      {
-        small: '../../assets/images/projects/Project_7.jpeg',
-        medium: '../../assets/images/projects/Project_7.jpeg',
-        big: '../../assets/images/projects/Project_7.jpeg',
-        description: "Some caption",
-        label: "test"
-      },
-      {
-        small: '../../assets/images/projects/Project_8.jpeg',
-        medium: '../../assets/images/projects/Project_8.jpeg',
-        big: '../../assets/images/projects/Project_8.jpeg',
-        description: "Some caption",
-        label: "test"
-      },
-      {
-        small: '../../assets/images/projects/Project_9.jpeg',
-        medium: '../../assets/images/projects/Project_9.jpeg',
-        big: '../../assets/images/projects/Project_9.jpeg',
-        description: "Some caption",
-        label: "test"
-      },
-      {
-        small: '../../assets/images/projects/Project_10.jpeg',
-        medium: '../../assets/images/projects/Project_10.jpeg',
-        big: '../../assets/images/projects/Project_10.jpeg',
-        description: "Some caption",
-        label: "test"
-      },
-      {
-        small: '../../assets/images/projects/Project_11.jpeg',
-        medium: '../../assets/images/projects/Project_11.jpeg',
-        big: '../../assets/images/projects/Project_11.jpeg',
-        description: "Some caption",
-        label: "test"
-      }  
-    ];
+  ngOnInit() {
+    this.apiService.getProjectImageConfiguration()
+    .then(res => {
+      res.forEach(image => {
+          this.galleryImages.push(image);
+      });
+
+      this.spinner.hide();
+    })
+    .catch((err) => {
+        console.log(err);
+        this.spinner.hide();
+    });
   }
 
   previewOpenHandler() {
