@@ -33,6 +33,8 @@ import { FormalprocessComponent } from './formalprocess/formalprocess.component'
 // import {VgBufferingModule} from '@videogular/ngx-videogular/buffering';
 import { VideoComponent } from './video/video.component';
 import { YouTubePlayerModule } from '@angular/youtube-player';
+import { LazyLoadImagesModule } from 'ngx-lazy-load-images';
+import { ComparisionComponent } from './comparision/comparision.component';
 
 @NgModule({
   declarations: [
@@ -52,7 +54,8 @@ import { YouTubePlayerModule } from '@angular/youtube-player';
     ContactusComponent,
     RequestComponent,
     FormalprocessComponent,
-    VideoComponent
+    VideoComponent,
+    ComparisionComponent
   ],
   imports: [
     BrowserModule,
@@ -72,7 +75,8 @@ import { YouTubePlayerModule } from '@angular/youtube-player';
       preventDuplicates: true,
       messageClass: "o2-toast"
     }),
-    YouTubePlayerModule
+    YouTubePlayerModule,
+    LazyLoadImagesModule
   ],
   providers: [],
   entryComponents: [RequestComponent],

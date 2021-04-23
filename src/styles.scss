@@ -48,10 +48,15 @@
   }
 
   .slick-prev, .slick-next {
-    height: 45px;
+    height: 55px;
     width: 40px;
-    background: #575d59 !important;
+    //color: #024d8c;
+    //background: #575d59 !important;
     z-index: 100;
+
+    // i {
+    //   color: #024d8c;
+    // }
 }
   
   // router-outlet + *  {
@@ -199,6 +204,23 @@
 .slick-dots {
   bottom: -50px !important;
 }
+
+.slick-prev:before {
+  //content: "<";
+  color: #024d8c;
+  font-size: 40px;
+}
+
+.slick-next:before {
+  //content: ">";
+  color: #024d8c;
+  font-size: 40px;
+}
+
+// .slick-list {
+//   margin: 0 10px;
+// }
+
 
 .ngx-gallery {
     display: inline-block;

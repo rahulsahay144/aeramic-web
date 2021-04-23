@@ -1,6 +1,5 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
-import { MatAccordion } from '@angular/material/expansion';
-import {BudgetPackage, BasicPackage, ClassicPackage, PremiumPackage, ImperiaPackage, RoyalePackage} from '../../constants';
+import { Component, OnInit } from '@angular/core';
+import {BudgetPackage, BasicPackage, ClassicPackage, PremiumPackage, ImperiaPackage, RoyalePackage} from '../constants';
 
 interface IPackagesType {
   name: string;
@@ -20,43 +19,12 @@ interface IPackagesSubItems {
 }
 
 @Component({
-  selector: 'app-packages',
-  templateUrl: './packages.component.html',
-  styleUrls: ['./packages.component.scss']
+  selector: 'app-comparision',
+  templateUrl: './comparision.component.html',
+  styleUrls: ['./comparision.component.scss']
 })
-export class PackagesComponent implements OnInit {
+export class ComparisionComponent implements OnInit {
   step = 0;
-
-  //@ViewChild('accordion',{static:true}) packageAccordion: MatAccordion;
-
-  slideConfig = {  
-    slidesToShow: 3,  
-    slidesToScroll: 1,  
-    dots: false,  
-    infinite: false,
-    enabled: true,
-    autoplay: false,
-    arrows: true,
-    centerMode: false,
-    prevArrow:"<button type='button' class='slick-prev pull-left'><i class='fa fa-angle-left' aria-hidden='true'></i></button>",
-    nextArrow:"<button type='button' class='slick-next pull-right'><i class='fa fa-angle-right' aria-hidden='true'></i></button>",
-    'responsive': [
-      {
-        'breakpoint': 1024,
-        settings: {
-          slidesToShow: 2
-        }
-      },
-      {
-        'breakpoint': 920,
-        settings: {
-          slidesToShow: 1
-        }
-      }
-    ]
-    // nextArrow: "<div class='nav-btn next-slide'></div>",
-    // prevArrow: "<div class='nav-btn prev-slide'></div>"
-  };  
 
   budgetPackageItems: IPackagesItems[] = [
     {step: 1, title: 'Designs & Drawings', subItems: [ {label: 'Basic Elevation', desc: ''},  {label: 'Structural Design', desc: ''}]},
@@ -162,18 +130,72 @@ export class PackagesComponent implements OnInit {
     {step: 10, title: 'Customisation Costs', subItems: []},   
   ];
 
-  packages: IPackagesType[] = [
-    { name: BudgetPackage.name.valueOf(), price: BudgetPackage.price.valueOf(), content : this.budgetPackageItems},
-    { name: BasicPackage.name.valueOf(), price: BasicPackage.price.valueOf(), content : this.basicPackageItems},
-    { name: ClassicPackage.name.valueOf(), price: ClassicPackage.price.valueOf(), content : this.classicPackageItems},
-    { name: PremiumPackage.name.valueOf(), price: PremiumPackage.price.valueOf(), content : this.classicPackageItems},
-    { name: RoyalePackage.name.valueOf(), price: RoyalePackage.price.valueOf(), content : this.classicPackageItems},
-    { name: ImperiaPackage.name.valueOf(), price: ImperiaPackage.price.valueOf(), content : this.classicPackageItems}
+  packages = [
+    { value: BudgetPackage.name.valueOf(), text: BudgetPackage.name.valueOf() },
+    { value: BasicPackage.name.valueOf(), text: BasicPackage.name.valueOf() },
+    { value: ClassicPackage.name.valueOf(), text: ClassicPackage.name.valueOf() },
+    { value: PremiumPackage.name.valueOf(), text: PremiumPackage.name.valueOf() },
+    { value: RoyalePackage.name.valueOf(), text: RoyalePackage.name.valueOf() },
+    { value: ImperiaPackage.name.valueOf(), text: ImperiaPackage.name.valueOf() }
   ];
 
+  selected1: any;
+  selected2: any;
+
+  //Default
+  package1 : IPackagesType;
+  package2 : IPackagesType;
+  
   constructor() { }
 
   ngOnInit(): void {
+    this.selected1 = BudgetPackage.name.valueOf();
+    this.selected2 = BasicPackage.name.valueOf();
+
+    this.package1 = { name: BudgetPackage.name.valueOf(), price: BudgetPackage.price.valueOf(), content : this.budgetPackageItems};
+    this.package2 = { name: BasicPackage.name.valueOf(), price: BasicPackage.price.valueOf(), content : this.basicPackageItems};
+  }
+
+  onFirstSelectionChange() {
+    if(this.selected1 == BudgetPackage.name.valueOf()) {
+      this.package1 = { name: BudgetPackage.name.valueOf(), price: BudgetPackage.price.valueOf(), content : this.budgetPackageItems};
+    }
+    else if(this.selected1 == BasicPackage.name.valueOf()) {
+      this.package1 = { name: BasicPackage.name.valueOf(), price: BasicPackage.price.valueOf(), content : this.basicPackageItems};
+    }
+    else if(this.selected1 == ClassicPackage.name.valueOf()) {
+      this.package1 = { name: ClassicPackage.name.valueOf(), price: ClassicPackage.price.valueOf(), content : this.classicPackageItems};
+    }
+    else if(this.selected1 == PremiumPackage.name.valueOf()) {
+      this.package1 = { name: PremiumPackage.name.valueOf(), price: PremiumPackage.price.valueOf(), content : this.classicPackageItems};
+    }
+    else if(this.selected1 == RoyalePackage.name.valueOf()) {
+      this.package1 = { name: RoyalePackage.name.valueOf(), price: RoyalePackage.price.valueOf(), content : this.classicPackageItems};
+    }
+    else if(this.selected1 == ImperiaPackage.name.valueOf()) {
+      this.package1 = { name: ImperiaPackage.name.valueOf(), price: ImperiaPackage.price.valueOf(), content : this.classicPackageItems};
+    }
+  }
+
+  onSecondSelectionChange() {
+    if(this.selected2 == BudgetPackage.name.valueOf()) {
+      this.package2 = { name: BudgetPackage.name.valueOf(), price: BudgetPackage.price.valueOf(), content : this.budgetPackageItems};
+    }
+    else if(this.selected2 == BasicPackage.name.valueOf()) {
+      this.package2 = { name: BasicPackage.name.valueOf(), price: BasicPackage.price.valueOf(), content : this.basicPackageItems};
+    }
+    else if(this.selected2 == ClassicPackage.name.valueOf()) {
+      this.package2 = { name: ClassicPackage.name.valueOf(), price: ClassicPackage.price.valueOf(), content : this.classicPackageItems};
+    }
+    else if(this.selected2 == PremiumPackage.name.valueOf()) {
+      this.package2 = { name: PremiumPackage.name.valueOf(), price: PremiumPackage.price.valueOf(), content : this.classicPackageItems};
+    }
+    else if(this.selected2 == RoyalePackage.name.valueOf()) {
+      this.package2 = { name: RoyalePackage.name.valueOf(), price: RoyalePackage.price.valueOf(), content : this.classicPackageItems};
+    }
+    else if(this.selected2 == ImperiaPackage.name.valueOf()) {
+      this.package2 = { name: ImperiaPackage.name.valueOf(), price: ImperiaPackage.price.valueOf(), content : this.classicPackageItems};
+    }
   }
 
   setStep(index: number) {

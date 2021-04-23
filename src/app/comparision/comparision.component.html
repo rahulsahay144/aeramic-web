@@ -1,0 +1,99 @@
+<div class="comparision__container">
+    <h1>Compare Packages</h1>
+    <div class="comparision-content row">
+                <div class="col-md-4">
+                  <mat-form-field fxLayoutAlign="center">
+                    <mat-select class="select-head" [(ngModel)]="selected1" [ngModelOptions]="{standalone: true}" [(value)]="selected1" (ngModelChange)="onFirstSelectionChange()">
+                        <mat-option *ngFor="let package of packages" [value]="package.value">
+                        {{package.text}}
+                        </mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                  <div class="generic_content active clearfix">
+                      <div class="generic_head_price clearfix">
+                          <div class="generic_head_content clearfix">
+                             
+                              <div class="head_bg"></div>
+                              <div class="head">
+                                  <span>{{package1.name}}</span>
+                              </div>
+                          </div>
+                          <div class="generic_price_tag clearfix">	
+                              <span class="price">
+                                  <span class="sign">₹</span>
+                                  <span class="currency">{{package1.price | number}}</span>
+                                  <span class="month">/sq.ft</span>
+                              </span>
+                          </div>
+                      </div>  
+                      <div class="generic_feature_list">
+                        <mat-accordion class="example-headers-align">
+                          <mat-expansion-panel *ngFor="let item of package1.content; last as isLast" [expanded]="step === item.step" (opened)="setStep(item.step)" (closed)="closeStep(item.step)">
+                              <mat-expansion-panel-header>
+                                <mat-panel-title>
+                                  {{item.title}}
+                                </mat-panel-title>
+                              </mat-expansion-panel-header>
+                          
+                              <div class="generic_feature_list">
+                                  <ul>
+                                      <li *ngFor="let subItem of item.subItems; last as isLast" >
+                                        <span>{{subItem.label}}</span>
+                                        &nbsp;{{subItem.desc}}
+                                      </li>
+                                  </ul>
+                              </div>
+                          </mat-expansion-panel>
+                        </mat-accordion>
+                      </div>
+                  </div>
+                </div>
+
+                <div class="col-md-4">
+                    <mat-form-field fxLayoutAlign="center">
+                        <mat-select class="select-head" [(ngModel)]="selected2" [ngModelOptions]="{standalone: true}" [(value)]="selected2" (ngModelChange)="onSecondSelectionChange()">
+                            <mat-option *ngFor="let package of packages" [value]="package.value">
+                            {{package.text}}
+                            </mat-option>
+                        </mat-select>
+                      </mat-form-field>
+                    <div class="generic_content active clearfix">
+                        <div class="generic_head_price clearfix">
+                            <div class="generic_head_content clearfix">
+                                <div class="head_bg"></div>
+                                <div class="head">
+                                    <span>{{package2.name}}</span>
+                                </div>
+                            </div>
+                            <div class="generic_price_tag clearfix">	
+                                <span class="price">
+                                    <span class="sign">₹</span>
+                                    <span class="currency">{{package2.price | number}}</span>
+                                    <span class="month">/sq.ft</span>
+                                </span>
+                            </div>
+                        </div>  
+                        <div class="generic_feature_list">
+                          <mat-accordion class="example-headers-align">
+                            <mat-expansion-panel *ngFor="let item of package2.content; last as isLast" [expanded]="step === item.step" (opened)="setStep(item.step)" (closed)="closeStep(item.step)">
+                                <mat-expansion-panel-header>
+                                  <mat-panel-title>
+                                    {{item.title}}
+                                  </mat-panel-title>
+                                </mat-expansion-panel-header>
+                            
+                                <div class="generic_feature_list">
+                                    <ul>
+                                        <li *ngFor="let subItem of item.subItems; last as isLast" >
+                                          <span>{{subItem.label}}</span>
+                                          &nbsp;{{subItem.desc}}
+                                        </li>
+                                    </ul>
+                                </div>
+                            </mat-expansion-panel>
+                          </mat-accordion>
+                        </div>
+                    </div>
+                  </div>
+    </div>
+</div>

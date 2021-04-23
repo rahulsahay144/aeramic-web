@@ -2,8 +2,6 @@
     <h2>Packages</h2>
     <h4>Find the best home construction packages.*</h4>
     <div class="package-content">
-    
-    <section>
             <div class="container">
 
               <ngx-slick-carousel class="carousel" 
@@ -30,7 +28,7 @@
 
                           <div class="generic_feature_list">
                             <mat-accordion class="example-headers-align">
-                              <mat-expansion-panel *ngFor="let item of package.content; last as isLast" [expanded]="step === item.step" (opened)="setStep(item.step)" (closed)="closeStep()">
+                              <mat-expansion-panel *ngFor="let item of package.content; last as isLast" [expanded]="step === item.step" (opened)="setStep(item.step)" (closed)="closeStep(item.step)">
                                   <mat-expansion-panel-header>
                                     <mat-panel-title>
                                       {{item.title}}
@@ -49,52 +47,6 @@
                       </div>
                   </div>
               </ngx-slick-carousel>
-
-              <!-- <div class="row">
-                <div class="col-md-4" *ngFor="let package of packages; let i = index">
-                  <div class="generic_content clearfix" [ngClass]="{'active': i === 1}">
-                      <div class="generic_head_price clearfix">
-                          <div class="generic_head_content clearfix">
-                              <div class="head_bg"></div>
-                              <div class="head">
-                                  <span>{{package.name}}</span>
-                              </div>
-                          </div>
-                          <div class="generic_price_tag clearfix">	
-                              <span class="price">
-                                  <span class="sign">₹</span>
-                                  <span class="currency">{{package.price | number}}</span>
-                                  <span class="month">/sq.ft</span>
-                              </span>
-                          </div>
-                      </div>  
-                      <div class="generic_feature_list">
-                        <mat-accordion class="example-headers-align">
-                          <mat-expansion-panel *ngFor="let item of package.content; last as isLast" [expanded]="step === item.step" (opened)="setStep(item.step)" (closed)="closeStep()">
-                              <mat-expansion-panel-header>
-                                <mat-panel-title>
-                                  {{item.title}}
-                                </mat-panel-title>
-                              </mat-expansion-panel-header>
-                          
-                              <div class="generic_feature_list">
-                                  <ul>
-                                      <li *ngFor="let subItem of item.subItems; last as isLast" >
-                                        <span>{{subItem.label}}</span>
-                                        &nbsp;{{subItem.desc}}
-                                      </li>
-                                  </ul>
-                              </div>
-                          </mat-expansion-panel>
-                        </mat-accordion>
-                      </div>
-                  </div>
-                </div>
-              </div>-->
             </div> 
-
-            
-    </section>
-        
     </div>
 </div>

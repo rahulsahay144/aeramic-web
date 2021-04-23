@@ -26,15 +26,15 @@ export class HowitworksComponent implements OnInit {
     dots: false,  
     infinite: true,
     enabled: true,
-    autoplay: true,
+    autoplay: false,
     //draggable: false,
     autoplaySpeed: 3000,
     arrows: true,
     lazyLoad: 'progressive',
     adaptiveHeight: false, 
     centerMode: false,
-    // nextArrow: "<div class='nav-btn next-slide'></div>",
-    // prevArrow: "<div class='nav-btn prev-slide'></div>"
+    prevArrow:"<button type='button' class='slick-prev pull-left'><i class='fa fa-angle-left fa-2x' aria-hidden='true'></i></button>",
+    nextArrow:"<button type='button' class='slick-next pull-right'><i class='fa fa-angle-right fa-2x' aria-hidden='true'></i></button>",
   };  
 
   constructor() { }

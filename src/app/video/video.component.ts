@@ -52,17 +52,15 @@ export class VideoComponent implements OnInit {
         this.videoHeight = 350;
         this.videoWidth = 450;
       }
-      else if(screenWidth < 900 && screenWidth > 599) {
+      else if(screenWidth < 900 && screenWidth > 390) {
         this.videoHeight = 250;
         this.videoWidth = 350;
       }
-      else if(screenWidth < 599) {
-        this.videoHeight = 150;
-        this.videoWidth = 250;
+      else if(screenWidth < 390) {
+        this.videoHeight = 180;
+        this.videoWidth = 280;
       }
   }
-
-
   // Autoplay
   onReady() {
     this.player.mute();         
