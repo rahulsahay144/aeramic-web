@@ -34,6 +34,7 @@
     "moment-timezone": "^0.5.33",
     "ngx-gallery": "^5.10.0",
     "ngx-gallery-9": "^1.0.6",
+    "ngx-lazy-load-images": "^2.0.0",
     "ngx-slick-carousel": "^0.5.1",
     "ngx-spinner": "^11.0.1",
     "ngx-toastr": "^13.2.1",
