@@ -20,6 +20,7 @@ import {MatSelectModule} from '@angular/material/select';
 import {MatButtonToggleModule} from '@angular/material/button-toggle';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
 import {MatStepperModule} from '@angular/material/stepper';
+import {MatSliderModule} from '@angular/material/slider';
 
 
 @NgModule({
@@ -44,7 +45,8 @@ import {MatStepperModule} from '@angular/material/stepper';
         MatSelectModule,
         MatButtonToggleModule,
         MatProgressBarModule,
-        MatStepperModule
+        MatStepperModule,
+        MatSliderModule
   ],
   exports: [
     MatMenuModule,
@@ -67,7 +69,8 @@ import {MatStepperModule} from '@angular/material/stepper';
     MatSelectModule,
     MatButtonToggleModule,
     MatProgressBarModule,
-    MatStepperModule
+    MatStepperModule,
+    MatSliderModule
   ]
 })
 

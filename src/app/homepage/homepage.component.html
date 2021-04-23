@@ -11,7 +11,7 @@
       <div class="banner_info" #appmapScrollPoint>
         <div class="banner_info_scroller">
             <div>
-                <button mat-raised-button color="accent" class="lets-build-button">Let's Build<mat-icon>fast_forward</mat-icon></button>
+                <button mat-raised-button color="accent" class="lets-build-button" [routerLink]="['contactus']">Let's Build<mat-icon>fast_forward</mat-icon></button>
              </div>
         </div>
       </div>
@@ -25,8 +25,8 @@
       <app-howitworks></app-howitworks>
       <mat-divider></mat-divider>
       <app-packages></app-packages>
-      
-    
+      <mat-divider></mat-divider>
+      <app-video></app-video>
       <!-- <app-carousel></app-carousel>
       <mat-divider></mat-divider> -->
       <!-- <mat-divider></mat-divider>

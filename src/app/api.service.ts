@@ -55,6 +55,16 @@ export class ApiService {
     }).toPromise();
   }
 
+  public async getProjectVideoConfiguration() {
+    return this.httpClient.get<any>(environment.dataURI + "videos.json",
+    {
+        headers : {
+            "Content-Type" : "application/json",
+            "Authorization" : "allow"
+        }
+    }).toPromise();
+  }
+
   // public async getExternalPropertyData() {
   //   return this.httpClient.get(environment.dataURI + '?_'+ Date.now(),
   //   {

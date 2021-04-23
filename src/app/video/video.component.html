@@ -1,0 +1,19 @@
+<div class="video__container" *ngIf="isReady">
+    <h2>Video Tour</h2>
+    <h4>Over 800 happy family members are part of Aeramic family.</h4>
+    <div class="video-content">
+            <div *ngFor="let v of videos" class="col1 col">
+                <youtube-player suggestedQuality="highres" #player
+                    [height]="videoHeight"
+                    [width]="videoWidth"
+                    (ready)="onReady($event)"
+                    (stateChange)="onStateChange($event)"
+                    videoId="{{v.id}}">
+                </youtube-player>
+                <div class="video-footer">
+                    <h4 class="video-footer-title">{{v.heading}}</h4>
+                    <p class="video-footer-desc">{{v.description}}</p>
+                </div>
+            </div>
+    </div>
+</div>

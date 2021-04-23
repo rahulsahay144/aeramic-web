@@ -27,6 +27,12 @@ import { ContactusComponent } from './contactus/contactus.component';
 import { RequestComponent } from './contactus/request/request.component';
 import { ToastrModule } from 'ngx-toastr';
 import { FormalprocessComponent } from './formalprocess/formalprocess.component';
+// import {VgCoreModule} from '@videogular/ngx-videogular/core';
+// import {VgControlsModule} from '@videogular/ngx-videogular/controls';
+// import {VgOverlayPlayModule} from '@videogular/ngx-videogular/overlay-play';
+// import {VgBufferingModule} from '@videogular/ngx-videogular/buffering';
+import { VideoComponent } from './video/video.component';
+import { YouTubePlayerModule } from '@angular/youtube-player';
 
 @NgModule({
   declarations: [
@@ -45,7 +51,8 @@ import { FormalprocessComponent } from './formalprocess/formalprocess.component'
     PackagesComponent,
     ContactusComponent,
     RequestComponent,
-    FormalprocessComponent
+    FormalprocessComponent,
+    VideoComponent
   ],
   imports: [
     BrowserModule,
@@ -65,6 +72,7 @@ import { FormalprocessComponent } from './formalprocess/formalprocess.component'
       preventDuplicates: true,
       messageClass: "o2-toast"
     }),
+    YouTubePlayerModule
   ],
   providers: [],
   entryComponents: [RequestComponent],
