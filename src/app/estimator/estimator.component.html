@@ -52,7 +52,7 @@
     <div *ngIf="showCalculations" class="results__container">
         <mat-divider></mat-divider>
         <h2>Your Cost Estimate</h2>
-        <div class="results-content">
+        <div class="results-content" *animIf="showCalculations; info: { startAnim: 'bounceIn', endAnim: 'bounceOut', time: 1000 }">
             <div class="row">
                 <div class="col1 col" *ngFor="let calc of calculationsSet1; let i = index">
                     <h4>{{calc.name}} - {{calc.price | currency:'INR':'symbol':'1.0-0'}}/sq.ft (Incl. GST)</h4>

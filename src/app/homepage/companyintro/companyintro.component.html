@@ -1,9 +1,9 @@
-<div class="app-card__container">
+<div class="app-card__container" (inViewport)="$event.intersectionRatio >= 0.5 && showCards=true">
     <div class="app-card-title">
         <h2>Why Aeramic?</h2>
         <h4>We ascertain placidity of mind, trust, and transparent construction.</h4>
     </div>
-    <div class="app-card-info">
+    <div class="app-card-info" *animIf="showCards; info: { startAnim: 'slideInUp', endAnim: 'slideInDown', time: 1000 }">
         <mat-card>
             <mat-card-header (click)="onCardHeaderClick('/sellers')">
                 <mat-card-title>Safe Money Transaction</mat-card-title>

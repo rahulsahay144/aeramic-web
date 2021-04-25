@@ -1,7 +1,7 @@
-<div class="services__container">
+<div class="services__container" (inViewport)="$event.intersectionRatio >= 0.5 && showServices=true">
     <h2>Our Services</h2>
     <h4>Impeccable construction powered by deep expertise.</h4>
-    <div class="services-content">
+    <div class="services-content" *animIf="showServices; info: { startAnim: 'slideInUp', endAnim: 'slideInDown', time: 1000 }">
             <div class="col1 col">
                     <div class="house-image"></div>
                     <div class="services__label">

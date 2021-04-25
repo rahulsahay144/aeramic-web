@@ -35,6 +35,8 @@ import { VideoComponent } from './video/video.component';
 import { YouTubePlayerModule } from '@angular/youtube-player';
 import { LazyLoadImagesModule } from 'ngx-lazy-load-images';
 import { ComparisionComponent } from './comparision/comparision.component';
+import { NgxAnimationsModule } from 'ngx-animations';
+import { InViewportModule } from '@ngx-starter-kit/ngx-utils';
 
 @NgModule({
   declarations: [
@@ -76,7 +78,9 @@ import { ComparisionComponent } from './comparision/comparision.component';
       messageClass: "o2-toast"
     }),
     YouTubePlayerModule,
-    LazyLoadImagesModule
+    LazyLoadImagesModule,
+    NgxAnimationsModule,
+    InViewportModule
   ],
   providers: [],
   entryComponents: [RequestComponent],

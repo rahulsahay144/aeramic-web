@@ -1,7 +1,7 @@
-<div class="howitworks__container">
+<div class="howitworks__container" (inViewport)="$event.intersectionRatio >= 0.5 && showHowItWorks=true">
     <h2>How it works</h2>
     <h4>Our steps are simple and facile to understand: Plan - Build - Track - Settle in.</h4>
-    <div class="breadcrumb-pagination">
+    <div class="breadcrumb-pagination" *animIf="showHowItWorks; info: { startAnim: 'slideInUp', endAnim: 'slideInDown', time: 1000 }">
         <div [ngClass]="(stepNum == 1) ? 'active': (stepNum > 1) ? 'completed' : 'todo'">
           <span>1</span>
           <p>Raise a Request</p>   
@@ -27,7 +27,7 @@
             <p>Settle In</p>
         </div>
     </div>
-    <div class="howitworks-content">
+    <div class="howitworks-content" *animIf="showHowItWorks; info: { startAnim: 'slideInUp', endAnim: 'slideInDown', time: 1000 }">
         <ngx-slick-carousel class="carousel" 
             #slickModal="slick-carousel" 
             [config]="slideConfig" 
@@ -46,7 +46,7 @@
             </div>
         </ngx-slick-carousel>
     </div>
-    <div class="howitworks__sub-content">
+    <div class="howitworks__sub-content" *animIf="showHowItWorks; info: { startAnim: 'slideInUp', endAnim: 'slideInDown', time: 1000 }">
         <div class="numberCircle_2">
             <span class="fa-stack fa-3x">
               <i class="fa fa-circle-o fa-stack-2x orange-font"></i>

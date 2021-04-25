@@ -1,6 +1,6 @@
-<div class="app-intro__container">
+<div class="app-intro__container" (inViewport)="$event.intersectionRatio >= 0.5 && showfacts=true">
       <!--  container  --> 
-      <div class="container">
+      <div class="container" *animIf="showfacts; info: { startAnim: 'slideInUp', endAnim: 'slideInDown', time: 800 }">
         <div class="row">
             <div class="col-md-4">
                 <h2 class="section-title">Some Interesting <strong> Facts</strong></h2>

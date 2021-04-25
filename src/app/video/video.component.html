@@ -1,7 +1,7 @@
-<div class="video__container" *ngIf="isReady">
+<div class="video__container" *ngIf="isReady" (inViewport)="$event.intersectionRatio >= 0.5 && showVideo=true">
     <h2>Video Tour</h2>
     <h4>Over 800 happy family members are part of Aeramic family.</h4>
-    <div class="video-content">
+    <div class="video-content" *animIf="showVideo; info: { startAnim: 'slideInUp', endAnim: 'slideInDown', time: 1000 }">
             <div *ngFor="let v of videos" class="col1 col">
                 <youtube-player suggestedQuality="highres" #player
                     [height]="videoHeight"

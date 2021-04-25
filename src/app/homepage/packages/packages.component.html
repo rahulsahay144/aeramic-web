@@ -1,7 +1,7 @@
-<div class="package__container">
+<div class="package__container" (inViewport)="$event.intersectionRatio >= 0.5 && showPackages=true">
     <h2>Packages</h2>
     <h4>Find the best home construction packages.*</h4>
-    <div class="package-content">
+    <div class="package-content" *animIf="showPackages; info: { startAnim: 'slideInUp', endAnim: 'slideInDown', time: 1000 }">
             <div class="container">
 
               <ngx-slick-carousel class="carousel" 

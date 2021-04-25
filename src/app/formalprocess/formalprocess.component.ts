@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import { animations } from "ngx-animations";
 
 @Component({
   selector: 'app-formalprocess',
@@ -7,6 +8,12 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms';
   styleUrls: ['./formalprocess.component.scss']
 })
 export class FormalprocessComponent implements OnInit {
+  animation = "fadeIn";
+  animations = Object.keys(animations);
+  time = 300;
+  data = Array.apply(null, Array(100)).map(function(val, i) {
+    return i;
+  });
 
   isLinear = false;
   firstFormGroup: FormGroup;
