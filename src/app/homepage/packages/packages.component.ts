@@ -27,6 +27,8 @@ interface IPackagesSubItems {
 export class PackagesComponent implements OnInit {
   step = 0;
 
+  showPackages: boolean = false;
+
   //@ViewChild('accordion',{static:true}) packageAccordion: MatAccordion;
 
   slideConfig = {  

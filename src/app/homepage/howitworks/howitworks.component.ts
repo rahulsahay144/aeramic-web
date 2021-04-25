@@ -6,6 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./howitworks.component.scss']
 })
 export class HowitworksComponent implements OnInit {
+
+  showHowItWorks: boolean = false;
+
   slides = [
     {img: "../../../assets/images/work1.jpeg", text: "Raise a Request", pointer: "1"},
     {img: "../../../assets/images/work2.jpeg", text: "Meet our Expert", pointer: "2"},

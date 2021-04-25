@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FactsComponent implements OnInit {
 
+  showfacts: boolean = false;
+
   constructor() { }
 
   ngOnInit(): void {

@@ -7,6 +7,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./companyintro.component.scss']
 })
 export class CompanyintroComponent implements OnInit {
+  showCards: boolean = false;
 
   constructor(private router : Router) { }
 

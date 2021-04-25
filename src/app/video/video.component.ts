@@ -12,6 +12,8 @@ export class VideoComponent implements OnInit {
 
   @ViewChild('player') player: any;
 
+  showVideo: boolean = false;
+
   videoHeight:number;
   videoWidth:number;
   videos: any = [];
