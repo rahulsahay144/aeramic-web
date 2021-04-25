@@ -36,8 +36,8 @@
             (afterChange)="afterChange($event)"
             (beforeChange)="beforeChange($event)">
             <div ngxSlickItem *ngFor="let slide of slides" class="slide howitworks-content">
-                <div class="col1 col" lazy-load-images>
-                    <img class="howitworks-image" attr.data-src="{{ slide.img }}" alt="" width="100%">
+                <div class="col1 col">
+                    <img class="howitworks-image" src="{{ slide.img }}" alt="" width="100%">
                     <div class="howitworks__label">
                         <div class="numberCircle">{{ slide.pointer }}</div>
                         <h5>{{ slide.text }}</h5>

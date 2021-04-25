@@ -1,5 +1,6 @@
 import { Component, OnInit, Inject, ViewChild, ElementRef, NgZone } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { Title } from '@angular/platform-browser';
 import {BudgetPackage, BasicPackage, ClassicPackage, PremiumPackage, ImperiaPackage, CAR_PARKING_AREA, RoyalePackage} from '../constants';
 
 
@@ -43,7 +44,9 @@ export class EstimatorComponent implements OnInit {
   calculationsSet1: IPackagesType[];
   calculationsSet2: IPackagesType[];
 
-  constructor() { }
+  constructor(private titleService: Title) { 
+    this.titleService.setTitle('Aeramic Constructions & Consultancy Pvt. Ltd. | Cost Estimator');
+  }
 
   ngOnInit(): void {
     this.showCalculations = false;

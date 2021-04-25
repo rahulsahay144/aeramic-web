@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import { Title } from '@angular/platform-browser';
 import { animations } from "ngx-animations";
 
 @Component({
@@ -19,7 +20,9 @@ export class FormalprocessComponent implements OnInit {
   firstFormGroup: FormGroup;
   secondFormGroup: FormGroup;
 
-  constructor(private _formBuilder: FormBuilder) {}
+  constructor(private _formBuilder: FormBuilder, private titleService: Title) {
+    this.titleService.setTitle('Aeramic Constructions & Consultancy Pvt. Ltd. | How it Works');
+  }
 
   ngOnInit() {
     this.firstFormGroup = this._formBuilder.group({

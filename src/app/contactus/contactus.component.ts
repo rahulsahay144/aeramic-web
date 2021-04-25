@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-contactus',
@@ -9,7 +10,9 @@ export class ContactusComponent implements OnInit {
 
   initForm = true;
   
-  constructor() { }
+  constructor(private titleService: Title) { 
+    this.titleService.setTitle('Aeramic Constructions & Consultancy Pvt. Ltd. | Contact Us');
+  }
 
   ngOnInit(): void {
   }

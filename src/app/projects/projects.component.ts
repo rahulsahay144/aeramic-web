@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import { NgxGalleryOptions, NgxGalleryImage, NgxGalleryAnimation } from '@kolkov/ngx-gallery';
 import { ApiService } from '../api.service';
 import { NgxSpinnerService } from "ngx-spinner";
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-projects',
@@ -13,7 +14,9 @@ export class ProjectsComponent implements OnInit {
   galleryOptions: NgxGalleryOptions[];
   galleryImages: NgxGalleryImage[] = [];
 
-  constructor(private apiService: ApiService, private spinner: NgxSpinnerService) { 
+  constructor(private apiService: ApiService, private spinner: NgxSpinnerService, private titleService: Title) { 
+    this.titleService.setTitle('Aeramic Constructions & Consultancy Pvt. Ltd. | Our Projects');
+
     this.spinner.show();
 
     this.galleryOptions = [
