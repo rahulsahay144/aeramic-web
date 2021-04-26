@@ -73,6 +73,18 @@ export class HowitworksComponent implements OnInit {
       this.stepTitle = 'Book with Us';
       this.stepDescription = 'Good to go. You pay 5% of the estimated project cost as Booking Amount.';
     }
+    else if(this.stepNum == 4) {
+      this.stepTitle = 'Receive Designs';
+      this.stepDescription = 'Good to go. You pay 5% of the estimated project cost as Booking Amount.';
+    }
+    else if(this.stepNum == 5) {
+      this.stepTitle = 'Track & Transact';
+      this.stepDescription = 'Good to go. You pay 5% of the estimated project cost as Booking Amount.';
+    }
+    else if(this.stepNum == 6) {
+      this.stepTitle = 'Settle In';
+      this.stepDescription = 'Good to go. You pay 5% of the estimated project cost as Booking Amount.';
+    }
 
   }
     

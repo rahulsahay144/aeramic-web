@@ -8,10 +8,10 @@
           </div>
         </div>
       </div>
-      <div class="banner_info" #appmapScrollPoint>
+      <div class="banner_info">
         <div class="banner_info_scroller">
-            <div>
-                <button mat-raised-button color="accent" class="lets-build-button" [routerLink]="['contactus']">Let's Build<mat-icon>fast_forward</mat-icon></button>
+             <div [ngClass]="{'sticky_button': stickyletsBuild}">
+                <button #build mat-raised-button color="accent" class="lets-build-button" [routerLink]="['contactus']">Let's Build<mat-icon>fast_forward</mat-icon></button>
              </div>
         </div>
       </div>

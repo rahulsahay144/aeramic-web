@@ -6,7 +6,7 @@
         </div>
     </div>
     <div class="gallery_wrapper">
-        <ngx-gallery [options]="galleryOptions" [images]="galleryImages" class="ngx-gallery" (previewOpen)="previewOpenHandler()" (previewClose)="previewCloseHandler()"></ngx-gallery>
+        <ngx-gallery [options]="galleryOptions" [images]="galleryImages" class="ngx-gallery" (imagesReady)="imageOnReady()" (previewOpen)="previewOpenHandler()" (previewClose)="previewCloseHandler()"></ngx-gallery>
     </div>
 </div>
 

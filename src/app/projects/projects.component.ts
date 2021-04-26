@@ -21,16 +21,18 @@ export class ProjectsComponent implements OnInit {
 
     this.galleryOptions = [
       {
-        width: '600px',
-        height: '450px',
+        width: '700px',
+        height: '550px',
         thumbnailsColumns: 6,
         imageAnimation: NgxGalleryAnimation.Slide,
         imageDescription: true,
         imageSwipe: true,
+        thumbnailsSwipe: true,
         thumbnailsRemainingCount: true,
         previewCloseOnEsc: true,
         previewKeyboardNavigation: true,
         previewBullets: true,
+        previewFullscreen: false,
         arrowPrevIcon: 'fa fa-arrow-circle-left fa-2x',
         arrowNextIcon: 'fa fa-arrow-circle-right fa-2x'
       },
@@ -38,11 +40,11 @@ export class ProjectsComponent implements OnInit {
       {
         breakpoint: 800,
         width: '400px',
-        height: '400px',
+        height: '350px',
         imagePercent: 80,
         thumbnailsPercent: 20,
-        thumbnailsMargin: 20,
-        thumbnailMargin: 20,
+        thumbnailsMargin: 10,
+        thumbnailMargin: 10,
         arrowPrevIcon: 'fa fa-arrow-circle-left fa-1x',
         arrowNextIcon: 'fa fa-arrow-circle-right fa-1x'
       },
@@ -51,7 +53,10 @@ export class ProjectsComponent implements OnInit {
         breakpoint: 400,
         //preview: false,
         width: '250px',
-        height: '250px',
+        height: '200px',
+        thumbnailsPercent: 20,
+        thumbnailsMargin: 10,
+        thumbnailMargin: 10,
         arrowPrevIcon: 'fa fa-arrow-circle-left',
         arrowNextIcon: 'fa fa-arrow-circle-right'
       }
@@ -64,8 +69,6 @@ export class ProjectsComponent implements OnInit {
       res.forEach(image => {
           this.galleryImages.push(image);
       });
-
-      this.spinner.hide();
     })
     .catch((err) => {
         console.log(err);
@@ -81,6 +84,10 @@ export class ProjectsComponent implements OnInit {
   previewCloseHandler() {
     const elm = document.querySelector<HTMLElement>("app-header")!;
     elm.style.zIndex = "2";
+  }
+
+  imageOnReady() {
+    this.spinner.hide();
   }
 
 }

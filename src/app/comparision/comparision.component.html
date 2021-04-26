@@ -1,10 +1,10 @@
 <div class="comparision__container">
     <h1>Compare Packages</h1>
     <div class="comparision-content row">
-                <div class="col-md-4">
-                  <mat-form-field fxLayoutAlign="center">
+                <div class="col-md-3">
+                  <mat-form-field fxLayoutAlign="center center">
                     <mat-select class="select-head" [(ngModel)]="selected1" [ngModelOptions]="{standalone: true}" [(value)]="selected1" (ngModelChange)="onFirstSelectionChange()">
-                        <mat-option *ngFor="let package of packages" [value]="package.value">
+                        <mat-option *ngFor="let package of packages" [value]="package.value" [disabled]="package.text == selected2">
                         {{package.text}}
                         </mat-option>
                     </mat-select>
@@ -49,10 +49,10 @@
                   </div>
                 </div>
 
-                <div class="col-md-4">
-                    <mat-form-field fxLayoutAlign="center">
+                <div class="col-md-3">
+                    <mat-form-field fxLayoutAlign="center center">
                         <mat-select class="select-head" [(ngModel)]="selected2" [ngModelOptions]="{standalone: true}" [(value)]="selected2" (ngModelChange)="onSecondSelectionChange()">
-                            <mat-option *ngFor="let package of packages" [value]="package.value">
+                            <mat-option *ngFor="let package of packages" [value]="package.value" [disabled]="package.text == selected1">
                             {{package.text}}
                             </mat-option>
                         </mat-select>

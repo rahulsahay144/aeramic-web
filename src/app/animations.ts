@@ -91,7 +91,7 @@ import {
 
 export const slideInAnimation =
   trigger('routeAnimations', [
-    transition('* <=> JoinUs', [
+    transition('* <=> *', [
       style({ position: 'relative' }),
       query(':enter, :leave', [
         style({
