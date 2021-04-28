@@ -8,14 +8,15 @@ import * as constants from "../constants";
 })
 export class ComparisionComponent implements OnInit {
   step = 0;
+  selectedCity: string;
 
   packages = [
-    { value: constants.BudgetPackage.name.valueOf(), text: constants.BudgetPackage.name.valueOf() },
-    { value: constants.BasicPackage.name.valueOf(), text: constants.BasicPackage.name.valueOf() },
-    { value: constants.ClassicPackage.name.valueOf(), text: constants.ClassicPackage.name.valueOf() },
-    { value: constants.PremiumPackage.name.valueOf(), text: constants.PremiumPackage.name.valueOf() },
-    { value: constants.RoyalePackage.name.valueOf(), text: constants.RoyalePackage.name.valueOf() },
-    { value: constants.ImperiaPackage.name.valueOf(), text: constants.ImperiaPackage.name.valueOf() }
+    { value: constants.PatnaBudgetPackage.name.valueOf(), text: constants.PatnaBudgetPackage.name.valueOf() },
+    { value: constants.PatnaBasicPackage.name.valueOf(), text: constants.PatnaBasicPackage.name.valueOf() },
+    { value: constants.PatnaClassicPackage.name.valueOf(), text: constants.PatnaClassicPackage.name.valueOf() },
+    { value: constants.PatnaPremiumPackage.name.valueOf(), text: constants.PatnaPremiumPackage.name.valueOf() },
+    { value: constants.PatnaRoyalePackage.name.valueOf(), text: constants.PatnaRoyalePackage.name.valueOf() },
+    { value: constants.PatnaImperiaPackage.name.valueOf(), text: constants.PatnaImperiaPackage.name.valueOf() }
   ];
 
   selected1: any;
@@ -28,53 +29,102 @@ export class ComparisionComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    this.selected1 = constants.BudgetPackage.name.valueOf();
-    this.selected2 = constants.BasicPackage.name.valueOf();
+    // Default is Patna
+    this.selectedCity = '1';
 
-    this.package1 = { name: constants.BudgetPackage.name.valueOf(), price: constants.BudgetPackage.price.valueOf(), content : constants.budgetPackageItems};
-    this.package2 = { name: constants.BasicPackage.name.valueOf(), price: constants.BasicPackage.price.valueOf(), content : constants.basicPackageItems};
+    this.selected1 = constants.PatnaBudgetPackage.name.valueOf();
+    this.selected2 = constants.PatnaBasicPackage.name.valueOf();
+
+    this.package1 = { name: constants.PatnaBudgetPackage.name.valueOf(), price: constants.PatnaBudgetPackage.price.valueOf(), content : constants.budgetPackageItems};
+    this.package2 = { name: constants.PatnaBasicPackage.name.valueOf(), price: constants.PatnaBasicPackage.price.valueOf(), content : constants.basicPackageItems};
   }
 
   onFirstSelectionChange() {
-    if(this.selected1 == constants.BudgetPackage.name.valueOf()) {
-      this.package1 = { name: constants.BudgetPackage.name.valueOf(), price: constants.BudgetPackage.price.valueOf(), content : constants.budgetPackageItems};
+    if(this.selectedCity == '1') {
+      if(this.selected1 == constants.PatnaBudgetPackage.name.valueOf()) {
+        this.package1 = { name: constants.PatnaBudgetPackage.name.valueOf(), price: constants.PatnaBudgetPackage.price.valueOf(), content : constants.budgetPackageItems};
+      }
+      else if(this.selected1 == constants.PatnaBasicPackage.name.valueOf()) {
+        this.package1 = { name: constants.PatnaBasicPackage.name.valueOf(), price: constants.PatnaBasicPackage.price.valueOf(), content : constants.basicPackageItems};
+      }
+      else if(this.selected1 == constants.PatnaClassicPackage.name.valueOf()) {
+        this.package1 = { name: constants.PatnaClassicPackage.name.valueOf(), price: constants.PatnaClassicPackage.price.valueOf(), content : constants.classicPackageItems};
+      }
+      else if(this.selected1 == constants.PatnaPremiumPackage.name.valueOf()) {
+        this.package1 = { name: constants.PatnaPremiumPackage.name.valueOf(), price: constants.PatnaPremiumPackage.price.valueOf(), content : constants.classicPackageItems};
+      }
+      else if(this.selected1 == constants.PatnaRoyalePackage.name.valueOf()) {
+        this.package1 = { name: constants.PatnaRoyalePackage.name.valueOf(), price: constants.PatnaRoyalePackage.price.valueOf(), content : constants.classicPackageItems};
+      }
+      else if(this.selected1 == constants.PatnaImperiaPackage.name.valueOf()) {
+        this.package1 = { name: constants.PatnaImperiaPackage.name.valueOf(), price: constants.PatnaImperiaPackage.price.valueOf(), content : constants.classicPackageItems};
+      }
     }
-    else if(this.selected1 == constants.BasicPackage.name.valueOf()) {
-      this.package1 = { name: constants.BasicPackage.name.valueOf(), price: constants.BasicPackage.price.valueOf(), content : constants.basicPackageItems};
+    else {
+      if(this.selected1 == constants.RanchiBudgetPackage.name.valueOf()) {
+        this.package1 = { name: constants.RanchiBudgetPackage.name.valueOf(), price: constants.RanchiBudgetPackage.price.valueOf(), content : constants.budgetPackageItems};
+      }
+      else if(this.selected1 == constants.RanchiBasicPackage.name.valueOf()) {
+        this.package1 = { name: constants.RanchiBasicPackage.name.valueOf(), price: constants.RanchiBasicPackage.price.valueOf(), content : constants.basicPackageItems};
+      }
+      else if(this.selected1 == constants.RanchiClassicPackage.name.valueOf()) {
+        this.package1 = { name: constants.RanchiClassicPackage.name.valueOf(), price: constants.RanchiClassicPackage.price.valueOf(), content : constants.classicPackageItems};
+      }
+      else if(this.selected1 == constants.RanchiPremiumPackage.name.valueOf()) {
+        this.package1 = { name: constants.RanchiPremiumPackage.name.valueOf(), price: constants.RanchiPremiumPackage.price.valueOf(), content : constants.classicPackageItems};
+      }
+      else if(this.selected1 == constants.RanchiRoyalePackage.name.valueOf()) {
+        this.package1 = { name: constants.RanchiRoyalePackage.name.valueOf(), price: constants.RanchiRoyalePackage.price.valueOf(), content : constants.classicPackageItems};
+      }
+      else if(this.selected1 == constants.RanchiImperiaPackage.name.valueOf()) {
+        this.package1 = { name: constants.RanchiImperiaPackage.name.valueOf(), price: constants.RanchiImperiaPackage.price.valueOf(), content : constants.classicPackageItems};
+      }
     }
-    else if(this.selected1 == constants.ClassicPackage.name.valueOf()) {
-      this.package1 = { name: constants.ClassicPackage.name.valueOf(), price: constants.ClassicPackage.price.valueOf(), content : constants.classicPackageItems};
-    }
-    else if(this.selected1 == constants.PremiumPackage.name.valueOf()) {
-      this.package1 = { name: constants.PremiumPackage.name.valueOf(), price: constants.PremiumPackage.price.valueOf(), content : constants.classicPackageItems};
-    }
-    else if(this.selected1 == constants.RoyalePackage.name.valueOf()) {
-      this.package1 = { name: constants.RoyalePackage.name.valueOf(), price: constants.RoyalePackage.price.valueOf(), content : constants.classicPackageItems};
-    }
-    else if(this.selected1 == constants.ImperiaPackage.name.valueOf()) {
-      this.package1 = { name: constants.ImperiaPackage.name.valueOf(), price: constants.ImperiaPackage.price.valueOf(), content : constants.classicPackageItems};
-    }
+    
   }
 
   onSecondSelectionChange() {
-    if(this.selected2 == constants.BudgetPackage.name.valueOf()) {
-      this.package2 = { name: constants.BudgetPackage.name.valueOf(), price: constants.BudgetPackage.price.valueOf(), content : constants.budgetPackageItems};
+    if(this.selectedCity == '1') {
+      if(this.selected2 == constants.PatnaBudgetPackage.name.valueOf()) {
+        this.package2 = { name: constants.PatnaBudgetPackage.name.valueOf(), price: constants.PatnaBudgetPackage.price.valueOf(), content : constants.budgetPackageItems};
+      }
+      else if(this.selected2 == constants.PatnaBasicPackage.name.valueOf()) {
+        this.package2 = { name: constants.PatnaBasicPackage.name.valueOf(), price: constants.PatnaBasicPackage.price.valueOf(), content : constants.basicPackageItems};
+      }
+      else if(this.selected2 == constants.PatnaClassicPackage.name.valueOf()) {
+        this.package2 = { name: constants.PatnaClassicPackage.name.valueOf(), price: constants.PatnaClassicPackage.price.valueOf(), content : constants.classicPackageItems};
+      }
+      else if(this.selected2 == constants.PatnaPremiumPackage.name.valueOf()) {
+        this.package2 = { name: constants.PatnaPremiumPackage.name.valueOf(), price: constants.PatnaPremiumPackage.price.valueOf(), content : constants.classicPackageItems};
+      }
+      else if(this.selected2 == constants.PatnaRoyalePackage.name.valueOf()) {
+        this.package2 = { name: constants.PatnaRoyalePackage.name.valueOf(), price: constants.PatnaRoyalePackage.price.valueOf(), content : constants.classicPackageItems};
+      }
+      else if(this.selected2 == constants.PatnaImperiaPackage.name.valueOf()) {
+        this.package2 = { name: constants.PatnaImperiaPackage.name.valueOf(), price: constants.PatnaImperiaPackage.price.valueOf(), content : constants.classicPackageItems};
+      }
     }
-    else if(this.selected2 == constants.BasicPackage.name.valueOf()) {
-      this.package2 = { name: constants.BasicPackage.name.valueOf(), price: constants.BasicPackage.price.valueOf(), content : constants.basicPackageItems};
+    else {
+      if(this.selected2 == constants.RanchiBudgetPackage.name.valueOf()) {
+        this.package2 = { name: constants.RanchiBudgetPackage.name.valueOf(), price: constants.RanchiBudgetPackage.price.valueOf(), content : constants.budgetPackageItems};
+      }
+      else if(this.selected2 == constants.RanchiBasicPackage.name.valueOf()) {
+        this.package2 = { name: constants.RanchiBasicPackage.name.valueOf(), price: constants.RanchiBasicPackage.price.valueOf(), content : constants.basicPackageItems};
+      }
+      else if(this.selected2 == constants.RanchiClassicPackage.name.valueOf()) {
+        this.package2 = { name: constants.RanchiClassicPackage.name.valueOf(), price: constants.RanchiClassicPackage.price.valueOf(), content : constants.classicPackageItems};
+      }
+      else if(this.selected2 == constants.RanchiPremiumPackage.name.valueOf()) {
+        this.package2 = { name: constants.RanchiPremiumPackage.name.valueOf(), price: constants.RanchiPremiumPackage.price.valueOf(), content : constants.classicPackageItems};
+      }
+      else if(this.selected2 == constants.RanchiRoyalePackage.name.valueOf()) {
+        this.package2 = { name: constants.RanchiRoyalePackage.name.valueOf(), price: constants.RanchiRoyalePackage.price.valueOf(), content : constants.classicPackageItems};
+      }
+      else if(this.selected2 == constants.RanchiImperiaPackage.name.valueOf()) {
+        this.package2 = { name: constants.RanchiImperiaPackage.name.valueOf(), price: constants.RanchiImperiaPackage.price.valueOf(), content : constants.classicPackageItems};
+      }
     }
-    else if(this.selected2 == constants.ClassicPackage.name.valueOf()) {
-      this.package2 = { name: constants.ClassicPackage.name.valueOf(), price: constants.ClassicPackage.price.valueOf(), content : constants.classicPackageItems};
-    }
-    else if(this.selected2 == constants.PremiumPackage.name.valueOf()) {
-      this.package2 = { name: constants.PremiumPackage.name.valueOf(), price: constants.PremiumPackage.price.valueOf(), content : constants.classicPackageItems};
-    }
-    else if(this.selected2 == constants.RoyalePackage.name.valueOf()) {
-      this.package2 = { name: constants.RoyalePackage.name.valueOf(), price: constants.RoyalePackage.price.valueOf(), content : constants.classicPackageItems};
-    }
-    else if(this.selected2 == constants.ImperiaPackage.name.valueOf()) {
-      this.package2 = { name: constants.ImperiaPackage.name.valueOf(), price: constants.ImperiaPackage.price.valueOf(), content : constants.classicPackageItems};
-    }
+    
   }
 
   setStep(index: number) {
@@ -98,6 +148,11 @@ export class ComparisionComponent implements OnInit {
 
   breakpoint(e) {
     console.log('breakpoint');
+  }
+
+  onSelectedCityChange() {
+    this.onFirstSelectionChange();
+    this.onSecondSelectionChange();
   }
 
 }

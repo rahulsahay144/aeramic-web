@@ -10,8 +10,8 @@
             <div fxLayout="row wrap" fxLayoutAlign="space-evenly center" fxLayoutGap="10px">
                 <mat-form-field class="margin-top-10" fxFlex="0 1 calc(45% - 20px)">
                     <mat-label>City</mat-label>
-                    <mat-select [(ngModel)]="city" [ngModelOptions]="{standalone: true}">
-                        <mat-option *ngFor="let city of cities" [value]="city">
+                    <mat-select [(ngModel)]="city" [(value)]="city" [ngModelOptions]="{standalone: true}" (ngModelChange)="onCitySelectionChange()">
+                        <mat-option *ngFor="let city of cities" [value]="city.value">
                             {{city.viewValue}}
                         </mat-option>
                     </mat-select>

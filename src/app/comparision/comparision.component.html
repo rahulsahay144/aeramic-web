@@ -1,5 +1,9 @@
 <div class="comparision__container">
     <h1>Compare Packages</h1>
+    <mat-radio-group aria-label="Select City" [(ngModel)]="selectedCity" (change)="onSelectedCityChange()">
+        <mat-radio-button value="1" [checked]='true'>Patna</mat-radio-button>
+        <mat-radio-button value="2">Ranchi</mat-radio-button>
+    </mat-radio-group>
     <div class="comparision-content row">
                 <div class="col-md-3">
                   <mat-form-field fxLayoutAlign="center center">

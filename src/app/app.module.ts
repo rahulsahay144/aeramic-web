@@ -37,6 +37,7 @@ import { LazyLoadImagesModule } from 'ngx-lazy-load-images';
 import { ComparisionComponent } from './comparision/comparision.component';
 import { NgxAnimationsModule } from 'ngx-animations';
 import { InViewportModule } from '@ngx-starter-kit/ngx-utils';
+import { ScrollTopComponent } from './scroll-top/scroll-top.component';
 
 @NgModule({
   declarations: [
@@ -57,7 +58,8 @@ import { InViewportModule } from '@ngx-starter-kit/ngx-utils';
     RequestComponent,
     FormalprocessComponent,
     VideoComponent,
-    ComparisionComponent
+    ComparisionComponent,
+    ScrollTopComponent
   ],
   imports: [
     BrowserModule,

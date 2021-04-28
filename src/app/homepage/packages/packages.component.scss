@@ -9,6 +9,12 @@
     position: relative;
     background: rgba(255,80,41,.05);
 
+    .mat-radio-group{
+        display: flex;
+        width: 160px;
+        justify-content: space-between;
+      }
+
     .slick-slider {
         width: 100%;
         margin: auto;

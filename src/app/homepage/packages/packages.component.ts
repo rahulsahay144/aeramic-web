@@ -1,6 +1,8 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatAccordion } from '@angular/material/expansion';
 import * as constants from "../../constants";
+import { Observable, of } from "rxjs";
+import { MatRadioChange } from '@angular/material/radio';
 
 @Component({
   selector: 'app-packages',
@@ -11,6 +13,7 @@ export class PackagesComponent implements OnInit {
   step = 0;
 
   showPackages: boolean = false;
+  selectedCity: string;
 
   //@ViewChild('accordion',{static:true}) packageAccordion: MatAccordion;
 
@@ -43,18 +46,24 @@ export class PackagesComponent implements OnInit {
     // prevArrow: "<div class='nav-btn prev-slide'></div>"
   };  
 
-  packages: constants.IPackagesType[] = [
-    { name: constants.BudgetPackage.name.valueOf(), price: constants.BudgetPackage.price.valueOf(), content : constants.budgetPackageItems},
-    { name: constants.BasicPackage.name.valueOf(), price: constants.BasicPackage.price.valueOf(), content : constants.basicPackageItems},
-    { name: constants.ClassicPackage.name.valueOf(), price: constants.ClassicPackage.price.valueOf(), content : constants.classicPackageItems},
-    { name: constants.PremiumPackage.name.valueOf(), price: constants.PremiumPackage.price.valueOf(), content : constants.classicPackageItems},
-    { name: constants.RoyalePackage.name.valueOf(), price: constants.RoyalePackage.price.valueOf(), content : constants.classicPackageItems},
-    { name: constants.ImperiaPackage.name.valueOf(), price: constants.ImperiaPackage.price.valueOf(), content : constants.classicPackageItems}
-  ];
+  //packages: constants.IPackagesType[];
 
+  packages: Observable<constants.IPackagesType[]>;
+  
   constructor() { }
 
   ngOnInit(): void {
+    // Default is Patna
+    this.selectedCity = '1';
+
+    this.packages = of([
+      { name: constants.PatnaBudgetPackage.name.valueOf(), price: constants.PatnaBudgetPackage.price.valueOf(), content : constants.budgetPackageItems},
+      { name: constants.PatnaBasicPackage.name.valueOf(), price: constants.PatnaBasicPackage.price.valueOf(), content : constants.basicPackageItems},
+      { name: constants.PatnaClassicPackage.name.valueOf(), price: constants.PatnaClassicPackage.price.valueOf(), content : constants.classicPackageItems},
+      { name: constants.PatnaPremiumPackage.name.valueOf(), price: constants.PatnaPremiumPackage.price.valueOf(), content : constants.classicPackageItems},
+      { name: constants.PatnaRoyalePackage.name.valueOf(), price: constants.PatnaRoyalePackage.price.valueOf(), content : constants.classicPackageItems},
+      { name: constants.PatnaImperiaPackage.name.valueOf(), price: constants.PatnaImperiaPackage.price.valueOf(), content : constants.classicPackageItems}
+    ]);
   }
 
   setStep(index: number) {
@@ -78,6 +87,30 @@ export class PackagesComponent implements OnInit {
 
   breakpoint(e) {
     console.log('breakpoint');
+  }
+
+  onSelectedCityChange($event: MatRadioChange) {
+    if(this.selectedCity == '1') {
+
+      this.packages = of([
+        { name: constants.PatnaBudgetPackage.name.valueOf(), price: constants.PatnaBudgetPackage.price.valueOf(), content : constants.budgetPackageItems},
+        { name: constants.PatnaBasicPackage.name.valueOf(), price: constants.PatnaBasicPackage.price.valueOf(), content : constants.basicPackageItems},
+        { name: constants.PatnaClassicPackage.name.valueOf(), price: constants.PatnaClassicPackage.price.valueOf(), content : constants.classicPackageItems},
+        { name: constants.PatnaPremiumPackage.name.valueOf(), price: constants.PatnaPremiumPackage.price.valueOf(), content : constants.classicPackageItems},
+        { name: constants.PatnaRoyalePackage.name.valueOf(), price: constants.PatnaRoyalePackage.price.valueOf(), content : constants.classicPackageItems},
+        { name: constants.PatnaImperiaPackage.name.valueOf(), price: constants.PatnaImperiaPackage.price.valueOf(), content : constants.classicPackageItems}
+      ]);
+    }
+    else {
+      this.packages = of([
+        { name: constants.RanchiBudgetPackage.name.valueOf(), price: constants.RanchiBudgetPackage.price.valueOf(), content : constants.budgetPackageItems},
+        { name: constants.RanchiBasicPackage.name.valueOf(), price: constants.RanchiBasicPackage.price.valueOf(), content : constants.basicPackageItems},
+        { name: constants.RanchiClassicPackage.name.valueOf(), price: constants.RanchiClassicPackage.price.valueOf(), content : constants.classicPackageItems},
+        { name: constants.RanchiPremiumPackage.name.valueOf(), price: constants.RanchiPremiumPackage.price.valueOf(), content : constants.classicPackageItems},
+        { name: constants.RanchiRoyalePackage.name.valueOf(), price: constants.RanchiRoyalePackage.price.valueOf(), content : constants.classicPackageItems},
+        { name: constants.RanchiImperiaPackage.name.valueOf(), price: constants.RanchiImperiaPackage.price.valueOf(), content : constants.classicPackageItems}
+      ]);
+    }
   }
 
 }

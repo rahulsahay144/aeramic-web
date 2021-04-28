@@ -1,5 +1,9 @@
 <div class="package__container" (inViewport)="$event.intersectionRatio >= 0.5 && showPackages=true">
     <h2>Packages</h2>
+    <mat-radio-group aria-label="Select City" [(ngModel)]="selectedCity" (change)="onSelectedCityChange($event)">
+      <mat-radio-button value="1">Patna</mat-radio-button>
+      <mat-radio-button value="2">Ranchi</mat-radio-button>
+    </mat-radio-group>
     <h4>Find the best home construction packages.*</h4>
     <div class="package-content" *animIf="showPackages; info: { startAnim: 'slideInUp', endAnim: 'slideInDown', time: 1000 }">
             <div class="container">
@@ -8,7 +12,7 @@
                   #slickModal="slick-carousel" 
                   [config]="slideConfig"
                   (breakpoint)="breakpoint($event)">
-                    <div class="slide" ngxSlickItem *ngFor="let package of packages; let i = index">
+                    <div class="slide" ngxSlickItem *ngFor="let package of packages | async; let i = index">
                       <div class="generic_content clearfix" [ngClass]="{'active': i === 1}">
                           <div class="generic_head_price clearfix">
                               <div class="generic_head_content clearfix">
