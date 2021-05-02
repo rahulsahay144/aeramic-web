@@ -55,6 +55,10 @@
         }
 
         ::ng-deep  {
+            .mat-card-header {
+              justify-content: center;
+            }
+
             .mat-input-element {
               caret-color: #1A1D1E;
               font-size: 14.5px;

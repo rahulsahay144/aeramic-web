@@ -1,49 +1,66 @@
 <div class="leave-message__container">
     <div  class="form__container">
-            <div *ngIf="formsubmitted" class="estimate-form confirm-box">
-                <span><i class="far fa-check-circle fa-3x"></i></span>
-                <h5>Thank you for Contacting us. Our Team will get back to you.</h5>
-            </div>
-            <form *ngIf="!formsubmitted" #estimateForm='ngForm' class="estimate-form" (ngSubmit)="onEstimateRequestSubmit(estimateForm)">
-                <div fxLayout="row wrap" fxLayoutAlign="space-evenly center" fxLayoutGap="5px">
-                        <mat-form-field fxFlex="0 1 calc(95% - 10px)">
-                            <input matInput placeholder="Name" type="text" class="input-right-align" id="name" name='name' ngModel required>
-                            <mat-error *ngIf="estimateForm.controls['name']?.errors?.required">
-                                    This field is required.
-                            </mat-error>
-                        </mat-form-field>
 
-                        <mat-form-field fxFlex="0 1 calc(95% - 10px)">
-                            <input matInput placeholder="Phone" type="tel" id="phone" name='phone' ngModel>
-                            <mat-icon matPrefix>phone</mat-icon>
-                            <mat-hint>Include area code</mat-hint>
-                        </mat-form-field>
-
-                        <mat-form-field fxFlex="0 1 calc(95% - 10px)">
-                            <input matInput placeholder="Email" type="text" class="input-right-align" id="email" name='email' ngModel required>
-                            <mat-error *ngIf="estimateForm.controls['email']?.errors?.required">
-                                    This field is required.
-                            </mat-error>
-                        </mat-form-field>
-
-                        <mat-form-field fxFlex="0 1 calc(95% - 10px)">
-                            <mat-label>City</mat-label>
-                            <mat-select [(ngModel)]="city" [ngModelOptions]="{standalone: true}">
-                                <mat-option *ngFor="let city of cities" [value]="city">
-                                    {{city.viewValue}}
-                                </mat-option>
-                            </mat-select>
-                        </mat-form-field>
+        <mat-card class="form-card">
+            <mat-card-header *ngIf="!formsubmitted">
+                <mat-card-title>Get In Touch With Us</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <div *ngIf="formsubmitted" class="estimate-form confirm-box">
+                    <span><i class="far fa-check-circle fa-3x"></i></span>
+                    <h5>Thank you for Contacting us. Our Team will get back to you.</h5>
                 </div>
-                <div class="form-action-buttons">
-                    <button mat-raised-button color="primary" class="button" type="submit" [eventTracker]='{"category":"estimate", "action":"estimate_request_submit", "label" : "click"}' [disabled]="showBusy">
-                        <b *ngIf="!showBusy">Book Consultation</b>
-                        <div *ngIf="showBusy">
-                            <i class="fa fa-spinner fa-pulse fa-fw"></i>
-                        </div>
-                    </button>
-                </div>
-              </form>
+                <form *ngIf="!formsubmitted" #estimateForm='ngForm' class="estimate-form" (ngSubmit)="onEstimateRequestSubmit(estimateForm)">
+                    <div fxLayout="row wrap" fxLayoutAlign="space-evenly center" fxLayoutGap="5px">
+                            <mat-form-field fxFlex="0 1 calc(95% - 10px)">
+                                <input matInput placeholder="Name" type="text" id="name" name='name' ngModel required>
+                                <mat-error *ngIf="estimateForm.controls['name']?.errors?.required">
+                                        This field is required.
+                                </mat-error>
+                            </mat-form-field>
+    
+                            <mat-form-field fxFlex="0 1 calc(95% - 10px)">
+                                <input matInput placeholder="Phone" type="tel" class="input-right-align" id="phone" name='phone' pattern="[(]{0,1}[0-9]{3}[)]{0,1}[-\s\.]{0,1}[0-9]{3}[-\s\.]{0,1}[0-9]{4}" maxlength="10" ngModel required>
+                                <mat-error *ngIf="estimateForm.controls['phone']?.errors?.required">
+                                    This field is required.
+                                </mat-error>
+                                <mat-error *ngIf="estimateForm.controls['phone']?.errors?.pattern">
+                                    Invalid Phone format
+                                </mat-error>
+                                <mat-icon matPrefix>phone</mat-icon>
+                                <mat-hint>Include area code</mat-hint>
+                            </mat-form-field>
+    
+                            <mat-form-field fxFlex="0 1 calc(95% - 10px)">
+                                <input matInput placeholder="Email" type="email" class="input-right-align" id="email" name='email' ngModel required pattern="[a-zA-Z0-9.-_]{1,}@[a-zA-Z.-]{2,}[.]{1}[a-zA-Z]{2,}">
+                                <mat-error *ngIf="estimateForm.controls['email']?.errors?.required">
+                                        This field is required.
+                                </mat-error>
+                                <mat-error *ngIf="estimateForm.controls['email']?.errors?.pattern">
+                                    Invalid Email format
+                                </mat-error>
+                            </mat-form-field>
+    
+                            <mat-form-field fxFlex="0 1 calc(95% - 10px)">
+                                <mat-label>City</mat-label>
+                                <mat-select matInput [(value)]="selectedCity" [(ngModel)]="selectedCity" name='city' [ngModelOptions]="{standalone: true}">
+                                    <mat-option *ngFor="let city of cities" [value]="city.value">
+                                        {{city.viewValue}}
+                                    </mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                    </div>
+                    <div class="form-action-buttons">
+                        <button mat-raised-button color="primary" class="button" type="submit" [eventTracker]='{"category":"estimate", "action":"estimate_request_submit", "label" : "click"}' [disabled]="showBusy">
+                            <b *ngIf="!showBusy">Book Consultation</b>
+                            <div *ngIf="showBusy">
+                                <i class="fa fa-spinner fa-pulse fa-fw"></i>
+                            </div>
+                        </button>
+                    </div>
+                  </form>
+            </mat-card-content>
+        </mat-card>
     </div>
     
 </div>

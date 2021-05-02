@@ -65,6 +65,18 @@ export class ApiService {
     }).toPromise();
   }
 
+  public async sendContactUsEmail(data: any) {
+    let headers = new HttpHeaders();
+    headers = headers.set('Content-Type', 'application/json')
+                .append('Authorization', "allow");
+
+    let options = {
+      headers: headers
+    }; 
+
+    return this.httpClient.post<any>(environment.emailServiceURI + '?_'+ Date.now(), data, options).toPromise();
+  }
+
   // public async getExternalPropertyData() {
   //   return this.httpClient.get(environment.dataURI + '?_'+ Date.now(),
   //   {
